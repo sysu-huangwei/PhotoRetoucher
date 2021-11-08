@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "EditViewController.h"
 
 @interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -28,12 +29,15 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> *)info {
     [self dismissViewControllerAnimated:YES completion:nil];
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    if(image.imageOrientation!=UIImageOrientationUp){
+    if(image.imageOrientation != UIImageOrientationUp){
         UIGraphicsBeginImageContext(image.size);
         [image drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
         image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
     }
+    EditViewController* editViewController = [[EditViewController alloc] init];
+    editViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:editViewController animated:YES completion:nil];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

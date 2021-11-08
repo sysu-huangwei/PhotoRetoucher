@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7152F7932739980E008F01BB /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7152F7912739980E008F01BB /* EditViewController.m */; };
+		7152F7942739980E008F01BB /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7152F7922739980E008F01BB /* EditViewController.xib */; };
 		ECA0D8EC7754CD7E15014542 /* libPods-PhotoRetoucher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 172D7AE4548BDD4F183A5270 /* libPods-PhotoRetoucher.a */; };
 		FCCA1F472739515400D5CFCA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCA1F462739515400D5CFCA /* AppDelegate.m */; };
 		FCCA1F4A2739515400D5CFCA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCA1F492739515400D5CFCA /* SceneDelegate.m */; };
@@ -21,6 +23,9 @@
 		172D7AE4548BDD4F183A5270 /* libPods-PhotoRetoucher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoRetoucher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6BD7210566C53161E42B22 /* Pods-PhotoRetoucher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoRetoucher.release.xcconfig"; path = "Target Support Files/Pods-PhotoRetoucher/Pods-PhotoRetoucher.release.xcconfig"; sourceTree = "<group>"; };
 		650443BD9F503650D62AD0D7 /* Pods-PhotoRetoucher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoRetoucher.debug.xcconfig"; path = "Target Support Files/Pods-PhotoRetoucher/Pods-PhotoRetoucher.debug.xcconfig"; sourceTree = "<group>"; };
+		7152F7902739980E008F01BB /* EditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		7152F7912739980E008F01BB /* EditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		7152F7922739980E008F01BB /* EditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
 		FCCA1F422739515400D5CFCA /* PhotoRetoucher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoRetoucher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCA1F452739515400D5CFCA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FCCA1F462739515400D5CFCA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,7 +58,6 @@
 				650443BD9F503650D62AD0D7 /* Pods-PhotoRetoucher.debug.xcconfig */,
 				2E6BD7210566C53161E42B22 /* Pods-PhotoRetoucher.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -93,6 +97,9 @@
 				FCCA1F4B2739515400D5CFCA /* ViewController.h */,
 				FCCA1F4C2739515400D5CFCA /* ViewController.m */,
 				FCCA1F4E2739515400D5CFCA /* Main.storyboard */,
+				7152F7902739980E008F01BB /* EditViewController.h */,
+				7152F7912739980E008F01BB /* EditViewController.m */,
+				7152F7922739980E008F01BB /* EditViewController.xib */,
 				FCCA1F512739515600D5CFCA /* Assets.xcassets */,
 				FCCA1F532739515600D5CFCA /* LaunchScreen.storyboard */,
 				FCCA1F562739515600D5CFCA /* Info.plist */,
@@ -159,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7152F7942739980E008F01BB /* EditViewController.xib in Resources */,
 				FCCA1F552739515600D5CFCA /* LaunchScreen.storyboard in Resources */,
 				FCCA1F522739515600D5CFCA /* Assets.xcassets in Resources */,
 				FCCA1F502739515400D5CFCA /* Main.storyboard in Resources */,
@@ -218,6 +226,7 @@
 				FCCA1F472739515400D5CFCA /* AppDelegate.m in Sources */,
 				FCCA1F582739515600D5CFCA /* main.m in Sources */,
 				FCCA1F4A2739515400D5CFCA /* SceneDelegate.m in Sources */,
+				7152F7932739980E008F01BB /* EditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WR652HR2XM;
 				INFOPLIST_FILE = PhotoRetoucher/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,7 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WR652HR2XM;
 				INFOPLIST_FILE = PhotoRetoucher/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
