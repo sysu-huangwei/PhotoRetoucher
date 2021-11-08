@@ -1,0 +1,3 @@
+[submodule "3rdparty/ImageEffect-OpenGL"]
+	path = 3rdparty/ImageEffect-OpenGL
+	url = git@github.com:sysu-huangwei/ImageEffect-OpenGL.git
