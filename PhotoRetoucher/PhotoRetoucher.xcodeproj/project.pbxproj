@@ -10,6 +10,7 @@
 		7152F7932739980E008F01BB /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7152F7912739980E008F01BB /* EditViewController.m */; };
 		7152F7942739980E008F01BB /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7152F7922739980E008F01BB /* EditViewController.xib */; };
 		ECA0D8EC7754CD7E15014542 /* libPods-PhotoRetoucher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 172D7AE4548BDD4F183A5270 /* libPods-PhotoRetoucher.a */; };
+		FC29E699273A187D003F6696 /* libImageEffect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC29E694273A1861003F6696 /* libImageEffect.a */; };
 		FCCA1F472739515400D5CFCA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCA1F462739515400D5CFCA /* AppDelegate.m */; };
 		FCCA1F4A2739515400D5CFCA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCA1F492739515400D5CFCA /* SceneDelegate.m */; };
 		FCCA1F4D2739515400D5CFCA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCA1F4C2739515400D5CFCA /* ViewController.m */; };
@@ -19,6 +20,23 @@
 		FCCA1F582739515600D5CFCA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCA1F572739515600D5CFCA /* main.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FC29E693273A1861003F6696 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC29E68F273A1861003F6696 /* ImageEffect.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FCCA1EBA273945CE00D5CFCA;
+			remoteInfo = ImageEffect;
+		};
+		FC29E697273A1873003F6696 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC29E68F273A1861003F6696 /* ImageEffect.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FCCA1EB9273945CE00D5CFCA;
+			remoteInfo = ImageEffect;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		172D7AE4548BDD4F183A5270 /* libPods-PhotoRetoucher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoRetoucher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6BD7210566C53161E42B22 /* Pods-PhotoRetoucher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoRetoucher.release.xcconfig"; path = "Target Support Files/Pods-PhotoRetoucher/Pods-PhotoRetoucher.release.xcconfig"; sourceTree = "<group>"; };
@@ -26,6 +44,7 @@
 		7152F7902739980E008F01BB /* EditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		7152F7912739980E008F01BB /* EditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		7152F7922739980E008F01BB /* EditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
+		FC29E68F273A1861003F6696 /* ImageEffect.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ImageEffect.xcodeproj; path = "../3rdparty/ImageEffect-OpenGL/ImageEffect/ImageEffect.xcodeproj"; sourceTree = "<group>"; };
 		FCCA1F422739515400D5CFCA /* PhotoRetoucher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoRetoucher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCA1F452739515400D5CFCA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FCCA1F462739515400D5CFCA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC29E699273A187D003F6696 /* libImageEffect.a in Frameworks */,
 				ECA0D8EC7754CD7E15014542 /* libPods-PhotoRetoucher.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,9 +89,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FC29E690273A1861003F6696 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC29E694273A1861003F6696 /* libImageEffect.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FCCA1F392739515400D5CFCA = {
 			isa = PBXGroup;
 			children = (
+				FC29E68F273A1861003F6696 /* ImageEffect.xcodeproj */,
 				FCCA1F442739515400D5CFCA /* PhotoRetoucher */,
 				FCCA1F432739515400D5CFCA /* Products */,
 				138B54FBF9BA8DC57C0BAA88 /* Pods */,
@@ -124,6 +153,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				FC29E698273A1873003F6696 /* PBXTargetDependency */,
 			);
 			name = PhotoRetoucher;
 			productName = PhotoRetoucher;
@@ -154,12 +184,28 @@
 			mainGroup = FCCA1F392739515400D5CFCA;
 			productRefGroup = FCCA1F432739515400D5CFCA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FC29E690273A1861003F6696 /* Products */;
+					ProjectRef = FC29E68F273A1861003F6696 /* ImageEffect.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FCCA1F412739515400D5CFCA /* PhotoRetoucher */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FC29E694273A1861003F6696 /* libImageEffect.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libImageEffect.a;
+			remoteRef = FC29E693273A1861003F6696 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FCCA1F402739515400D5CFCA /* Resources */ = {
@@ -231,6 +277,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC29E698273A1873003F6696 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ImageEffect;
+			targetProxy = FC29E697273A1873003F6696 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FCCA1F4E2739515400D5CFCA /* Main.storyboard */ = {
