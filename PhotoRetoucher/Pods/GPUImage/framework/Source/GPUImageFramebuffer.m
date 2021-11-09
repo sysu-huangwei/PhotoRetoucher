@@ -3,7 +3,6 @@
 
 @interface GPUImageFramebuffer()
 {
-    GLuint framebuffer;
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
     CVPixelBufferRef renderTarget;
     CVOpenGLESTextureRef renderTexture;
@@ -51,7 +50,7 @@ void dataProviderUnlockCallback (void *info, const void *data, size_t size);
         runSynchronouslyOnVideoProcessingQueue(^{
             [GPUImageContext useImageProcessingContext];
             [self generateTexture];
-            framebuffer = 0;
+            _framebuffer = 0;
         });
     }
     else
@@ -133,8 +132,8 @@ void dataProviderUnlockCallback (void *info, const void *data, size_t size);
     runSynchronouslyOnVideoProcessingQueue(^{
         [GPUImageContext useImageProcessingContext];
     
-        glGenFramebuffers(1, &framebuffer);
-        glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+        glGenFramebuffers(1, &_framebuffer);
+        glBindFramebuffer(GL_FRAMEBUFFER, _framebuffer);
         
         // By default, all framebuffers on iOS 5.0+ devices are backed by texture caches, using one shared cache
         if ([GPUImageContext supportsFastTextureUpload])
@@ -206,10 +205,10 @@ void dataProviderUnlockCallback (void *info, const void *data, size_t size);
     runSynchronouslyOnVideoProcessingQueue(^{
         [GPUImageContext useImageProcessingContext];
         
-        if (framebuffer)
+        if (_framebuffer)
         {
-            glDeleteFramebuffers(1, &framebuffer);
-            framebuffer = 0;
+            glDeleteFramebuffers(1, &_framebuffer);
+            _framebuffer = 0;
         }
 
         
@@ -242,7 +241,7 @@ void dataProviderUnlockCallback (void *info, const void *data, size_t size);
 
 - (void)activateFramebuffer;
 {
-    glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+    glBindFramebuffer(GL_FRAMEBUFFER, _framebuffer);
     glViewport(0, 0, (int)_size.width, (int)_size.height);
 }
 
