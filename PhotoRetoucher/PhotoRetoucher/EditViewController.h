@@ -6,10 +6,15 @@
 //
 
 #import "ViewController.h"
+#import <GPUImage.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EditViewController : ViewController
+
+@property (strong, nonatomic) IBOutlet GPUImageView *showView;
+
+- (instancetype)initWithOriginImage:(UIImage *)originImage;
 
 @end
 

@@ -35,7 +35,7 @@
         image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
     }
-    EditViewController* editViewController = [[EditViewController alloc] init];
+    EditViewController* editViewController = [[EditViewController alloc] initWithOriginImage:image];
     editViewController.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:editViewController animated:YES completion:nil];
 }

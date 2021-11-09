@@ -9,13 +9,38 @@
 
 @interface EditViewController ()
 
+@property (nonatomic, strong) UIImage *originImage;
+@property (strong, nonatomic) GPUImagePicture *originPicture;
+
 @end
 
 @implementation EditViewController
 
+- (instancetype)initWithOriginImage:(UIImage *)originImage {
+    if (self = [super init]) {
+        _originImage = originImage;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    _originPicture = [[GPUImagePicture alloc] initWithImage:_originImage];
+    [_originPicture addTarget:_showView];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:_showView.bounds];
+    [imageView setImage:_originImage];
+    [_showView addSubview:imageView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [_originPicture processImageWithCompletionHandler:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (UIView *view in self->_showView.subviews) {
+                [view removeFromSuperview];
+            }
+        });
+    }];
 }
 
 /*
