@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditViewController">
             <connections>
                 <outlet property="effectSlider" destination="L5H-82-B6k" id="txF-be-2G3"/>
+                <outlet property="effectSliderLabel" destination="WVV-JB-apH" id="6ir-Uc-IX1"/>
                 <outlet property="showView" destination="ZAd-70-3JI" id="S7F-Fi-SKn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -89,13 +90,16 @@
                                                     <color key="backgroundColor" systemColor="systemTealColor"/>
                                                     <state key="normal" title="亮度"/>
                                                     <connections>
-                                                        <action selector="brightnessSelected:" destination="-1" eventType="touchUpInside" id="l4z-uh-vQi"/>
+                                                        <action selector="clickSomeEffectButton:" destination="-1" eventType="touchUpInside" id="rxD-pj-adf"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkd-8y-cRi">
                                                     <rect key="frame" x="80" y="0.0" width="80" height="80"/>
                                                     <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                    <state key="normal" title="小头"/>
+                                                    <state key="normal" title="锐化"/>
+                                                    <connections>
+                                                        <action selector="clickSomeEffectButton:" destination="-1" eventType="touchUpInside" id="nQt-7v-GRR"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLB-Gk-pMe">
                                                     <rect key="frame" x="160" y="0.0" width="80" height="80"/>
@@ -105,7 +109,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4A-wa-dxY">
                                                     <rect key="frame" x="240" y="0.0" width="80" height="80"/>
                                                     <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                    <state key="normal" title="锐化"/>
+                                                    <state key="normal" title="颜色"/>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

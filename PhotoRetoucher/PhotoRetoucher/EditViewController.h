@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) IBOutlet GPUImageView *showView;
 @property (strong, nonatomic) IBOutlet UISlider *effectSlider;
+@property (strong, nonatomic) IBOutlet UILabel *effectSliderLabel;
+@property (strong, nonatomic) UIButton *currentSelectedButton;
 
 - (instancetype)initWithOriginImage:(UIImage *)originImage;
 

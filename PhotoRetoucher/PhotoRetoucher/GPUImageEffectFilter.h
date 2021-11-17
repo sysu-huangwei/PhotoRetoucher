@@ -15,9 +15,14 @@ extern "C" {
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, EffectType) {
+    EffectType_Brightness = 1,
+    EffectType_Sharpen = 2,
+};
+
 @interface GPUImageEffectFilter : GPUImageFilter
 
-@property (nonatomic, assign) float brightnessAlpha;
+- (void)setEffectAlpha:(EffectType)type alpha:(float)alpha;
 
 @end
 

@@ -32,7 +32,6 @@ std::shared_ptr<effect::FrameBuffer> getCPPFrameBufferFromGPUImageFrameBuffer(GP
 
 - (instancetype)init {
     if (self = [super init]) {
-        _brightnessAlpha = 0.0f;
         runSynchronouslyOnVideoProcessingQueue(^{
             [GPUImageContext useImageProcessingContext];
             NSString *configFilePath = [NSBundle.mainBundle.bundlePath stringByAppendingPathComponent:@"ImageEffect.bundle/descriptions/PhotoRetoucher.json"];
@@ -89,11 +88,22 @@ std::shared_ptr<effect::FrameBuffer> getCPPFrameBufferFromGPUImageFrameBuffer(GP
     }
 }
 
-- (void)setBrightnessAlpha:(float)brightnessAlpha {
-    _brightnessAlpha = brightnessAlpha;
-    std::map<std::string, std::string> params = {
-        { FilterParam_Brightness_Alpha, std::to_string(brightnessAlpha) }
-    };
+- (void)setEffectAlpha:(EffectType)type alpha:(float)alpha {
+    std::map<std::string, std::string> params;
+    switch (type) {
+        case EffectType_Brightness:
+            params = {
+                { FilterParam_Brightness_Alpha, std::to_string(alpha) }
+            };
+            break;
+        case EffectType_Sharpen:
+            params = {
+                { FilterParam_Sharpen_Alpha, std::to_string(alpha) }
+            };
+            break;
+        default:
+            break;
+    }
     effectEngine->setParams(params);
 }
 
