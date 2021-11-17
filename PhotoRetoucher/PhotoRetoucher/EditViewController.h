@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EditViewController : ViewController
 
 @property (strong, nonatomic) IBOutlet GPUImageView *showView;
+@property (strong, nonatomic) IBOutlet UISlider *effectSlider;
 
 - (instancetype)initWithOriginImage:(UIImage *)originImage;
 

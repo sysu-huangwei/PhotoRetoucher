@@ -6,11 +6,13 @@
 //
 
 #import "EditViewController.h"
+#import "GPUImageEffectFilter.h"
 
 @interface EditViewController ()
 
 @property (nonatomic, strong) UIImage *originImage;
 @property (strong, nonatomic) GPUImagePicture *originPicture;
+@property (strong, nonatomic) GPUImageEffectFilter *effectFilter;
 
 @end
 
@@ -26,7 +28,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _originPicture = [[GPUImagePicture alloc] initWithImage:_originImage];
-    [_originPicture addTarget:_showView];
+    _effectFilter = [[GPUImageEffectFilter alloc] init];
+    [_originPicture addTarget:_effectFilter];
+    [_effectFilter addTarget:_showView];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:_showView.bounds];
     [imageView setImage:_originImage];
     [_showView addSubview:imageView];
@@ -41,6 +45,15 @@
             }
         });
     }];
+}
+
+- (IBAction)brightnessSelected:(id)sender {
+    _effectSlider.hidden = NO;
+}
+
+- (IBAction)effectSliderChanged:(UISlider *)slider {
+    _effectFilter.brightnessAlpha = slider.value;
+    [_originPicture processImage];
 }
 
 /*

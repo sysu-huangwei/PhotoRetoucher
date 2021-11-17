@@ -12,6 +12,7 @@
 		ECA0D8EC7754CD7E15014542 /* libPods-PhotoRetoucher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 172D7AE4548BDD4F183A5270 /* libPods-PhotoRetoucher.a */; };
 		FC29E699273A187D003F6696 /* libImageEffect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC29E694273A1861003F6696 /* libImageEffect.a */; };
 		FC29E6A2273A1B07003F6696 /* ImageEffect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FC29E6A1273A1B07003F6696 /* ImageEffect.bundle */; };
+		FC29F5952743D07C003F6696 /* GPUImageEffectFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = FC29F5942743D07C003F6696 /* GPUImageEffectFilter.mm */; };
 		FCCA1F472739515400D5CFCA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCA1F462739515400D5CFCA /* AppDelegate.m */; };
 		FCCA1F4A2739515400D5CFCA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCA1F492739515400D5CFCA /* SceneDelegate.m */; };
 		FCCA1F4D2739515400D5CFCA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCA1F4C2739515400D5CFCA /* ViewController.m */; };
@@ -47,6 +48,8 @@
 		7152F7922739980E008F01BB /* EditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
 		FC29E68F273A1861003F6696 /* ImageEffect.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ImageEffect.xcodeproj; path = "../3rdparty/ImageEffect-OpenGL/ImageEffect/ImageEffect.xcodeproj"; sourceTree = "<group>"; };
 		FC29E6A1273A1B07003F6696 /* ImageEffect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ImageEffect.bundle; path = "../3rdparty/ImageEffect-OpenGL/ImageEffect/ImageEffect.bundle"; sourceTree = "<group>"; };
+		FC29F5932743D07C003F6696 /* GPUImageEffectFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUImageEffectFilter.h; sourceTree = "<group>"; };
+		FC29F5942743D07C003F6696 /* GPUImageEffectFilter.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GPUImageEffectFilter.mm; sourceTree = "<group>"; };
 		FCCA1F422739515400D5CFCA /* PhotoRetoucher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoRetoucher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCA1F452739515400D5CFCA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FCCA1F462739515400D5CFCA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				7152F7902739980E008F01BB /* EditViewController.h */,
 				7152F7912739980E008F01BB /* EditViewController.m */,
 				7152F7922739980E008F01BB /* EditViewController.xib */,
+				FC29F5932743D07C003F6696 /* GPUImageEffectFilter.h */,
+				FC29F5942743D07C003F6696 /* GPUImageEffectFilter.mm */,
 				FCCA1F512739515600D5CFCA /* Assets.xcassets */,
 				FCCA1F532739515600D5CFCA /* LaunchScreen.storyboard */,
 				FCCA1F562739515600D5CFCA /* Info.plist */,
@@ -273,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCCA1F4D2739515400D5CFCA /* ViewController.m in Sources */,
+				FC29F5952743D07C003F6696 /* GPUImageEffectFilter.mm in Sources */,
 				FCCA1F472739515400D5CFCA /* AppDelegate.m in Sources */,
 				FCCA1F582739515600D5CFCA /* main.m in Sources */,
 				FCCA1F4A2739515400D5CFCA /* SceneDelegate.m in Sources */,
@@ -430,6 +436,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WR652HR2XM;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/Interface\"",
+					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/Filters/base\"",
+					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/OpenGLBase\"",
+					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/Define\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GPUImage\"",
+				);
 				INFOPLIST_FILE = PhotoRetoucher/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -450,6 +465,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WR652HR2XM;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/Interface\"",
+					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/Filters/base\"",
+					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/OpenGLBase\"",
+					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/Define\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GPUImage\"",
+				);
 				INFOPLIST_FILE = PhotoRetoucher/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

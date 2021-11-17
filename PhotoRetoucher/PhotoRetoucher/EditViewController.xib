@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditViewController">
             <connections>
+                <outlet property="effectSlider" destination="L5H-82-B6k" id="txF-be-2G3"/>
                 <outlet property="showView" destination="ZAd-70-3JI" id="S7F-Fi-SKn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -64,6 +65,9 @@
                                 </button>
                                 <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="L5H-82-B6k">
                                     <rect key="frame" x="8" y="10" width="358" height="31"/>
+                                    <connections>
+                                        <action selector="effectSliderChanged:" destination="-1" eventType="valueChanged" id="Ay3-JY-7mP"/>
+                                    </connections>
                                 </slider>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVV-JB-apH">
                                     <rect key="frame" x="374" y="14.5" width="30" height="21"/>
@@ -83,7 +87,10 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdV-xa-ZRb">
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                     <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                    <state key="normal" title="滤镜"/>
+                                                    <state key="normal" title="亮度"/>
+                                                    <connections>
+                                                        <action selector="brightnessSelected:" destination="-1" eventType="touchUpInside" id="l4z-uh-vQi"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkd-8y-cRi">
                                                     <rect key="frame" x="80" y="0.0" width="80" height="80"/>
