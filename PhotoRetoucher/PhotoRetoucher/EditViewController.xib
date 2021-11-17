@@ -104,12 +104,18 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLB-Gk-pMe">
                                                     <rect key="frame" x="160" y="0.0" width="80" height="80"/>
                                                     <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                    <state key="normal" title="锐化"/>
+                                                    <state key="normal" title="饱和度"/>
+                                                    <connections>
+                                                        <action selector="clickSomeEffectButton:" destination="-1" eventType="touchUpInside" id="efY-wj-jg9"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4A-wa-dxY">
                                                     <rect key="frame" x="240" y="0.0" width="80" height="80"/>
                                                     <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                    <state key="normal" title="颜色"/>
+                                                    <state key="normal" title="锐化"/>
+                                                    <connections>
+                                                        <action selector="clickSomeEffectButton:" destination="-1" eventType="touchUpInside" id="zFQ-OI-YOE"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
