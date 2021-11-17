@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, EffectType) {
     EffectType_Brightness = 1,
-    EffectType_Sharpen = 2,
+    EffectType_Contrast = 2,
+    EffectType_Sharpen = 3,
 };
 
 @interface GPUImageEffectFilter : GPUImageFilter

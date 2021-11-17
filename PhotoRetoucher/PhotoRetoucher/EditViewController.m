@@ -41,6 +41,7 @@
     
     _effectAlpha = [NSMutableDictionary dictionaryWithDictionary: @{
         @(EffectType_Brightness) : @(0.0),
+        @(EffectType_Contrast) : @(0.0),
         @(EffectType_Sharpen) : @(0.0),
     }];
 }
@@ -67,6 +68,11 @@
             _effectSlider.maximumValue = 1.0;
             _effectSlider.minimumValue = -1.0;
             _effectSlider.value = [_effectAlpha[@(EffectType_Brightness)] floatValue];
+        } else if ([button.currentTitle isEqualToString:@"对比度"]) {
+            _currentSelectedEffectType = EffectType_Contrast;
+            _effectSlider.maximumValue = 1.0;
+            _effectSlider.minimumValue = -1.0;
+            _effectSlider.value = [_effectAlpha[@(EffectType_Contrast)] floatValue];
         } else if ([button.currentTitle isEqualToString:@"锐化"]) {
             _currentSelectedEffectType = EffectType_Sharpen;
             _effectSlider.maximumValue = 1.0;

@@ -96,6 +96,11 @@ std::shared_ptr<effect::FrameBuffer> getCPPFrameBufferFromGPUImageFrameBuffer(GP
                 { FilterParam_Brightness_Alpha, std::to_string(alpha) }
             };
             break;
+        case EffectType_Contrast:
+            params = {
+                { FilterParam_Contrast_Alpha, std::to_string(alpha) }
+            };
+            break;
         case EffectType_Sharpen:
             params = {
                 { FilterParam_Sharpen_Alpha, std::to_string(alpha) }
