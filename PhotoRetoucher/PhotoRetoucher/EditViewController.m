@@ -35,6 +35,8 @@
     [_originPicture addTarget:_effectFilter];
     [_effectFilter addTarget:_showView];
     
+//    _originPicture.framebufferForOutput
+    
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:_showView.bounds];
     [imageView setImage:_originImage];
     [_showView addSubview:imageView];
@@ -43,6 +45,7 @@
         @(EffectType_Brightness) : @(0.0),
         @(EffectType_Contrast) : @(0.0),
         @(EffectType_Saturation) : @(0.0),
+        @(EffectType_Level) : @(1.0),
         @(EffectType_Sharpen) : @(0.0),
     }];
 }
@@ -79,6 +82,11 @@
             _effectSlider.maximumValue = 1.0;
             _effectSlider.minimumValue = -1.0;
             _effectSlider.value = [_effectAlpha[@(EffectType_Saturation)] floatValue];
+        } else if ([button.currentTitle isEqualToString:@"色阶"]) {
+            _currentSelectedEffectType = EffectType_Level;
+            _effectSlider.maximumValue = 9.99;
+            _effectSlider.minimumValue = 0.01;
+            _effectSlider.value = [_effectAlpha[@(EffectType_Level)] floatValue];
         } else if ([button.currentTitle isEqualToString:@"锐化"]) {
             _currentSelectedEffectType = EffectType_Sharpen;
             _effectSlider.maximumValue = 1.0;

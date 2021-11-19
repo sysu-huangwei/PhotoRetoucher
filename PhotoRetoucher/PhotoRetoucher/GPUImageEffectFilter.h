@@ -19,7 +19,8 @@ typedef NS_ENUM(NSUInteger, EffectType) {
     EffectType_Brightness = 1,
     EffectType_Contrast = 2,
     EffectType_Saturation = 3,
-    EffectType_Sharpen = 4,
+    EffectType_Level = 4,
+    EffectType_Sharpen = 5,
 };
 
 @interface GPUImageEffectFilter : GPUImageFilter

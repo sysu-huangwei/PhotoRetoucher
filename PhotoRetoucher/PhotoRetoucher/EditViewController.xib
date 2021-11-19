@@ -112,9 +112,17 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4A-wa-dxY">
                                                     <rect key="frame" x="240" y="0.0" width="80" height="80"/>
                                                     <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                    <state key="normal" title="锐化"/>
+                                                    <state key="normal" title="色阶"/>
                                                     <connections>
                                                         <action selector="clickSomeEffectButton:" destination="-1" eventType="touchUpInside" id="zFQ-OI-YOE"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jX6-48-ENg">
+                                                    <rect key="frame" x="320" y="0.0" width="80" height="80"/>
+                                                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                    <state key="normal" title="锐化"/>
+                                                    <connections>
+                                                        <action selector="clickSomeEffectButton:" destination="-1" eventType="touchUpInside" id="UfO-uV-bk8"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -123,13 +131,17 @@
                                                 <constraint firstItem="WdV-xa-ZRb" firstAttribute="leading" secondItem="96Z-4v-XE2" secondAttribute="leading" id="2Oe-Hq-5ca"/>
                                                 <constraint firstItem="D4A-wa-dxY" firstAttribute="width" secondItem="96Z-4v-XE2" secondAttribute="height" id="5el-sA-tK1"/>
                                                 <constraint firstItem="Xkd-8y-cRi" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="5vN-10-xjb"/>
+                                                <constraint firstItem="jX6-48-ENg" firstAttribute="leading" secondItem="D4A-wa-dxY" secondAttribute="trailing" id="Bcw-r8-Yg4"/>
                                                 <constraint firstItem="PLB-Gk-pMe" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="DRA-7u-7qW"/>
                                                 <constraint firstItem="PLB-Gk-pMe" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="Dgo-9K-ywl"/>
+                                                <constraint firstItem="jX6-48-ENg" firstAttribute="width" secondItem="96Z-4v-XE2" secondAttribute="height" multiplier="1:1" id="GiD-oc-mr8"/>
                                                 <constraint firstItem="Xkd-8y-cRi" firstAttribute="leading" secondItem="WdV-xa-ZRb" secondAttribute="trailing" id="ITC-LR-pZz"/>
                                                 <constraint firstItem="D4A-wa-dxY" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="Kbg-hk-q5t"/>
+                                                <constraint firstItem="jX6-48-ENg" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="LsW-qT-DQd"/>
                                                 <constraint firstItem="WdV-xa-ZRb" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="QZW-vn-OHj"/>
                                                 <constraint firstItem="D4A-wa-dxY" firstAttribute="leading" secondItem="PLB-Gk-pMe" secondAttribute="trailing" id="WVX-kg-Ntv"/>
                                                 <constraint firstItem="Xkd-8y-cRi" firstAttribute="width" secondItem="96Z-4v-XE2" secondAttribute="height" id="Yh3-zi-X5A"/>
+                                                <constraint firstItem="jX6-48-ENg" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="bBX-71-6Y3"/>
                                                 <constraint firstItem="WdV-xa-ZRb" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="eIb-GM-JhT"/>
                                                 <constraint firstItem="WdV-xa-ZRb" firstAttribute="width" secondItem="96Z-4v-XE2" secondAttribute="height" id="f0F-IL-TEs"/>
                                                 <constraint firstItem="PLB-Gk-pMe" firstAttribute="width" secondItem="96Z-4v-XE2" secondAttribute="height" id="gLu-cQ-053"/>
