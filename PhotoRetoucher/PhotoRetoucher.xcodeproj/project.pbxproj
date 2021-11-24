@@ -14,7 +14,6 @@
 		FC29E6A2273A1B07003F6696 /* ImageEffect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FC29E6A1273A1B07003F6696 /* ImageEffect.bundle */; };
 		FC29F5952743D07C003F6696 /* GPUImageEffectFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = FC29F5942743D07C003F6696 /* GPUImageEffectFilter.mm */; };
 		FCCA1F472739515400D5CFCA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCA1F462739515400D5CFCA /* AppDelegate.m */; };
-		FCCA1F4A2739515400D5CFCA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCA1F492739515400D5CFCA /* SceneDelegate.m */; };
 		FCCA1F4D2739515400D5CFCA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCA1F4C2739515400D5CFCA /* ViewController.m */; };
 		FCCA1F502739515400D5CFCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCA1F4E2739515400D5CFCA /* Main.storyboard */; };
 		FCCA1F522739515600D5CFCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCCA1F512739515600D5CFCA /* Assets.xcassets */; };
@@ -53,8 +52,6 @@
 		FCCA1F422739515400D5CFCA /* PhotoRetoucher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoRetoucher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCA1F452739515400D5CFCA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FCCA1F462739515400D5CFCA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FCCA1F482739515400D5CFCA /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		FCCA1F492739515400D5CFCA /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		FCCA1F4B2739515400D5CFCA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FCCA1F4C2739515400D5CFCA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FCCA1F4F2739515400D5CFCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -127,8 +124,6 @@
 			children = (
 				FCCA1F452739515400D5CFCA /* AppDelegate.h */,
 				FCCA1F462739515400D5CFCA /* AppDelegate.m */,
-				FCCA1F482739515400D5CFCA /* SceneDelegate.h */,
-				FCCA1F492739515400D5CFCA /* SceneDelegate.m */,
 				FCCA1F4B2739515400D5CFCA /* ViewController.h */,
 				FCCA1F4C2739515400D5CFCA /* ViewController.m */,
 				FCCA1F4E2739515400D5CFCA /* Main.storyboard */,
@@ -263,7 +258,6 @@
 				FC29F5952743D07C003F6696 /* GPUImageEffectFilter.mm in Sources */,
 				FCCA1F472739515400D5CFCA /* AppDelegate.m in Sources */,
 				FCCA1F582739515600D5CFCA /* main.m in Sources */,
-				FCCA1F4A2739515400D5CFCA /* SceneDelegate.m in Sources */,
 				7152F7932739980E008F01BB /* EditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
