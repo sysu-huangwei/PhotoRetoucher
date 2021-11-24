@@ -438,6 +438,31 @@ void dataProviderUnlockCallback (void *info, const void *data, size_t size)
 #endif
 }
 
+
+- (size_t)byteBufferWidth
+{
+#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
+    [self lockForReading];
+    size_t byteBufferWidth = CVPixelBufferGetWidth(renderTarget);
+    [self unlockAfterReading];
+    return byteBufferWidth;
+#else
+    return NULL; // TODO: do more with this on the non-texture-cache side
+#endif
+}
+
+- (size_t)byteBufferHeight
+{
+#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
+    [self lockForReading];
+    size_t byteBufferHeight = CVPixelBufferGetHeight(renderTarget);
+    [self unlockAfterReading];
+    return byteBufferHeight;
+#else
+    return NULL; // TODO: do more with this on the non-texture-cache side
+#endif
+}
+
 - (CVPixelBufferRef )pixelBuffer;
 {
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE

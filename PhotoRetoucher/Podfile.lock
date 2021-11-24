@@ -11,12 +11,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   GPUImage:
-    :commit: 9defedd65da70b8337cae86b1ac0d0745abfe6e5
+    :commit: 6d368c8abc580bab0a051096c31b8e86a89b6f1c
     :git: https://github.com/sysu-huangwei/GPUImage.git
 
 SPEC CHECKSUMS:
   GPUImage: 118d91933da9e0f552210de89c9bcda1712230f5
 
-PODFILE CHECKSUM: d8f7a8c9bca477cb9dd83301cdb28c9c492201c4
+PODFILE CHECKSUM: 5849d1466bbccbea619cbf80242ab49db683fefb
 
 COCOAPODS: 1.10.1
