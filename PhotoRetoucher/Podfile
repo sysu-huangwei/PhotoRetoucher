@@ -5,6 +5,6 @@ target 'PhotoRetoucher' do
   # Comment the next line if you don't want to use dynamic frameworks
   # use_frameworks!
 
-  pod 'GPUImage'
+  pod 'GPUImage', :git => 'https://github.com/sysu-huangwei/GPUImage.git', :branch => 'master'
 
 end

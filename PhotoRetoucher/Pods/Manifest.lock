@@ -2,15 +2,21 @@ PODS:
   - GPUImage (0.1.7)
 
 DEPENDENCIES:
-  - GPUImage
+  - GPUImage (from `https://github.com/sysu-huangwei/GPUImage.git`, branch `master`)
 
-SPEC REPOS:
-  trunk:
-    - GPUImage
+EXTERNAL SOURCES:
+  GPUImage:
+    :branch: master
+    :git: https://github.com/sysu-huangwei/GPUImage.git
+
+CHECKOUT OPTIONS:
+  GPUImage:
+    :commit: 9defedd65da70b8337cae86b1ac0d0745abfe6e5
+    :git: https://github.com/sysu-huangwei/GPUImage.git
 
 SPEC CHECKSUMS:
-  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  GPUImage: 118d91933da9e0f552210de89c9bcda1712230f5
 
-PODFILE CHECKSUM: 636bf09e24a183248ab69e3ed5fe2b6159722a0b
+PODFILE CHECKSUM: d8f7a8c9bca477cb9dd83301cdb28c9c492201c4
 
 COCOAPODS: 1.10.1
