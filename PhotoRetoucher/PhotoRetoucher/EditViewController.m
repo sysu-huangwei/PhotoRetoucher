@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) UIImage *originImage;
 @property (strong, nonatomic) GPUImagePicture *originPicture;
+@property (strong, nonatomic) GPUImageFilter *smallImageFilter;
 @property (strong, nonatomic) GPUImageEffectFilter *effectFilter;
 
 @property (assign, nonatomic) EffectType currentSelectedEffectType;
@@ -35,6 +36,13 @@
     [_originPicture addTarget:_effectFilter];
     [_effectFilter addTarget:_showView];
     
+    _smallImageFilter = [[GPUImageFilter alloc] init];
+    float smallEdge = fminf(_originImage.size.width, _originImage.size.height);
+    float ratio = 360.0f / smallEdge;
+    [_smallImageFilter forceProcessingAtSize: CGSizeMake(roundf(_originImage.size.width * ratio), roundf(_originImage.size.height * ratio))];
+    [_smallImageFilter useNextFrameForImageCapture];
+    [_originPicture addTarget:_smallImageFilter];
+    
 //    _originPicture.framebufferForOutput
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:_showView.bounds];
@@ -53,6 +61,14 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [_originPicture processImageWithCompletionHandler:^{
+        [_originPicture removeTarget:_smallImageFilter];
+        [_smallImageFilter setEnabled:NO];
+        GLubyte *byteBuffer =  _smallImageFilter.framebufferForOutput.byteBuffer;
+        NSUInteger bytesPerRow =  _smallImageFilter.framebufferForOutput.bytesPerRow;
+        CGFloat widthf = _smallImageFilter.framebufferForOutput.size.width;
+        CGFloat heightf = _smallImageFilter.framebufferForOutput.size.height;
+        size_t width = _smallImageFilter.framebufferForOutput.byteBufferWidth;
+        size_t height = _smallImageFilter.framebufferForOutput.byteBufferHeight;
         dispatch_async(dispatch_get_main_queue(), ^{
             for (UIView *view in self->_showView.subviews) {
                 [view removeFromSuperview];
