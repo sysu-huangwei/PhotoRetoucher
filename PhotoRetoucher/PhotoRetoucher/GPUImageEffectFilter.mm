@@ -122,4 +122,8 @@ std::shared_ptr<effect::FrameBuffer> getCPPFrameBufferFromGPUImageFrameBuffer(GP
     effectEngine->setParams(params);
 }
 
+- (void)setBGRASmallImageData:(unsigned char *)data width:(size_t)width height:(size_t)height bytesPerRow:(size_t)bytesPerRow {
+    effectEngine->setBGRASmallImageData(data, width, height, bytesPerRow);
+}
+
 @end

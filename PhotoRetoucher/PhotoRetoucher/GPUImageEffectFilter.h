@@ -21,6 +21,8 @@ typedef NS_ENUM(NSUInteger, EffectType) {
 
 - (void)setEffectAlpha:(EffectType)type alpha:(float)alpha;
 
+- (void)setBGRASmallImageData:(unsigned char *)data width:(size_t)width height:(size_t)height bytesPerRow:(size_t)bytesPerRow;
+
 @end
 
 NS_ASSUME_NONNULL_END

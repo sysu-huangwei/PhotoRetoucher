@@ -61,14 +61,17 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [_originPicture processImageWithCompletionHandler:^{
-        [_originPicture removeTarget:_smallImageFilter];
-        [_smallImageFilter setEnabled:NO];
+        glFlush();
         GLubyte *byteBuffer =  _smallImageFilter.framebufferForOutput.byteBuffer;
         NSUInteger bytesPerRow =  _smallImageFilter.framebufferForOutput.bytesPerRow;
         CGFloat widthf = _smallImageFilter.framebufferForOutput.size.width;
         CGFloat heightf = _smallImageFilter.framebufferForOutput.size.height;
         size_t width = _smallImageFilter.framebufferForOutput.byteBufferWidth;
         size_t height = _smallImageFilter.framebufferForOutput.byteBufferHeight;
+        [_effectFilter setBGRASmallImageData:byteBuffer width:width height:height bytesPerRow:bytesPerRow];
+        [_originPicture removeTarget:_smallImageFilter];
+        [_smallImageFilter setEnabled:NO];
+
         dispatch_async(dispatch_get_main_queue(), ^{
             for (UIView *view in self->_showView.subviews) {
                 [view removeFromSuperview];
