@@ -31,11 +31,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:_showView.bounds];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [imageView setImage:_originImage];
+    [_showView addSubview:imageView];
+    
     _originPicture = [[GPUImagePicture alloc] initWithImage:_originImage];
     _effectFilter = [[GPUImageEffectFilter alloc] init];
     [_originPicture addTarget:_effectFilter];
     [_effectFilter addTarget:_showView];
-    
+
     _smallImageFilter = [[GPUImageFilter alloc] init];
     float smallEdge = fminf(_originImage.size.width, _originImage.size.height);
     float ratio = 360.0f / smallEdge;
@@ -44,10 +49,6 @@
     [_originPicture addTarget:_smallImageFilter];
     
 //    _originPicture.framebufferForOutput
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:_showView.bounds];
-    [imageView setImage:_originImage];
-    [_showView addSubview:imageView];
     
     _effectAlpha = [NSMutableDictionary dictionaryWithDictionary: @{
         @(EffectType_Brightness) : @(0.0),
