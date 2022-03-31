@@ -56,6 +56,7 @@
         @(EffectType_Saturation) : @(0.0),
         @(EffectType_Level) : @(1.0),
         @(EffectType_Sharpen) : @(0.0),
+        @(EffectType_Mean) : @(0.0),
     }];
 }
 
@@ -112,6 +113,11 @@
             _effectSlider.maximumValue = 1.0;
             _effectSlider.minimumValue = 0;
             _effectSlider.value = [_effectAlpha[@(EffectType_Sharpen)] floatValue];
+        } else if ([button.currentTitle isEqualToString:@"模糊"]) {
+            _currentSelectedEffectType = EffectType_Mean;
+            _effectSlider.maximumValue = 1.0;
+            _effectSlider.minimumValue = 0;
+            _effectSlider.value = [_effectAlpha[@(EffectType_Mean)] floatValue];
         }
         _effectSlider.hidden = NO;
         [_currentSelectedButton setBackgroundColor:UIColor.systemTealColor];

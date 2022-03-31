@@ -34,7 +34,7 @@ std::shared_ptr<effect::FrameBuffer> getCPPFrameBufferFromGPUImageFrameBuffer(GP
     if (self = [super init]) {
         runSynchronouslyOnVideoProcessingQueue(^{
             [GPUImageContext useImageProcessingContext];
-            NSString *configFilePath = [NSBundle.mainBundle.bundlePath stringByAppendingPathComponent:@"ImageEffect.bundle/descriptions/PhotoRetoucher.json"];
+            NSString *configFilePath = [NSBundle.mainBundle.bundlePath stringByAppendingPathComponent:@"ImageEffect.bundle/descriptions/GuidedFilter.json"];
             self->effectEngine = new effect::EffectEngine(configFilePath.UTF8String);
             self->effectEngine->init();
         });
@@ -114,6 +114,10 @@ std::shared_ptr<effect::FrameBuffer> getCPPFrameBufferFromGPUImageFrameBuffer(GP
         case EffectType_Sharpen:
             params = {
                 { FilterParam_Sharpen_Alpha, std::to_string(alpha) }
+            };
+        case EffectType_Mean:
+            params = {
+                { FilterParam_Mean_Alpha, std::to_string(alpha) }
             };
             break;
         default:
