@@ -34,7 +34,7 @@ std::shared_ptr<effect::FrameBuffer> getCPPFrameBufferFromGPUImageFrameBuffer(GP
     if (self = [super init]) {
         runSynchronouslyOnVideoProcessingQueue(^{
             [GPUImageContext useImageProcessingContext];
-            NSString *configFilePath = [NSBundle.mainBundle.bundlePath stringByAppendingPathComponent:@"ImageEffect.bundle/descriptions/GuidedFilter.json"];
+            NSString *configFilePath = [NSBundle.mainBundle.bundlePath stringByAppendingPathComponent:@"ImageEffect.bundle/descriptions/PhotoRetoucher.json"];
             self->effectEngine = new effect::EffectEngine(configFilePath.UTF8String);
             self->effectEngine->init();
         });
@@ -78,6 +78,7 @@ std::shared_ptr<effect::FrameBuffer> getCPPFrameBufferFromGPUImageFrameBuffer(GP
     
     self->effectEngine->setInputFrameBufferAtIndex(inputFrameBuffer);
     
+    [self setPoint];
     self->effectEngine->renderToFrameBuffer(outputFrameBuffer);
     
     [firstInputFramebuffer unlock];
@@ -113,11 +114,12 @@ std::shared_ptr<effect::FrameBuffer> getCPPFrameBufferFromGPUImageFrameBuffer(GP
             break;
         case EffectType_Sharpen:
             params = {
-                { FilterParam_Sharpen_Alpha, std::to_string(alpha) }
+                { FilterParam_Multiply_EPS, std::to_string(alpha) }
             };
+            break;
         case EffectType_Mean:
             params = {
-                { FilterParam_Mean_Alpha, std::to_string(alpha) }
+                { FilterParam_Guided_Alpha, std::to_string(alpha) }
             };
             break;
         default:
@@ -128,6 +130,19 @@ std::shared_ptr<effect::FrameBuffer> getCPPFrameBufferFromGPUImageFrameBuffer(GP
 
 - (void)setBGRASmallImageData:(unsigned char *)data width:(size_t)width height:(size_t)height bytesPerRow:(size_t)bytesPerRow {
     effectEngine->setBGRASmallImageData(data, width, height, bytesPerRow);
+}
+
+- (void)setPoint {
+    std::vector<BasePoint> points;
+    BasePoint p0;
+    p0.x = 0.4;
+    p0.y = 0.4;
+    points.push_back(p0);
+    BasePoint p1;
+    p1.x = 0.2;
+    p1.y = 0.2;
+    points.push_back(p1);
+    self->effectEngine->setPoints(points);
 }
 
 @end
