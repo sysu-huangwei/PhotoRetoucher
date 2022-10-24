@@ -115,6 +115,7 @@ std::shared_ptr<effect::FrameBuffer> getCPPFrameBufferFromGPUImageFrameBuffer(GP
             params = {
                 { FilterParam_Sharpen_Alpha, std::to_string(alpha) }
             };
+            break;
         case EffectType_Mean:
             params = {
                 { FilterParam_Mean_Alpha, std::to_string(alpha) }
