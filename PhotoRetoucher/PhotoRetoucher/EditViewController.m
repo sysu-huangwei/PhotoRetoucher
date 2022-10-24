@@ -105,7 +105,7 @@
             _effectSlider.value = [_effectAlpha[@(EffectType_Saturation)] floatValue];
         } else if ([button.currentTitle isEqualToString:@"色阶"]) {
             _currentSelectedEffectType = EffectType_Level;
-            _effectSlider.maximumValue = 9.99;
+            _effectSlider.maximumValue = 0.99;
             _effectSlider.minimumValue = 0.01;
             _effectSlider.value = [_effectAlpha[@(EffectType_Level)] floatValue];
         } else if ([button.currentTitle isEqualToString:@"锐化"]) {
