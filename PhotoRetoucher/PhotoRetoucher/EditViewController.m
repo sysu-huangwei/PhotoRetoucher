@@ -71,24 +71,13 @@
     ];
     _currintLutIndex = 0;
     
-    NSString *stickerPath = [NSBundle.mainBundle.resourcePath stringByAppendingPathComponent:@"sticker.png"];
+    NSString *stickerPath = [NSBundle.mainBundle.resourcePath stringByAppendingPathComponent:@"makeup/makeup.png"];
     [_effectFilter setStickerImagePath:stickerPath];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [_originPicture processImageWithCompletionHandler:^{
-        glFlush();
-        GLubyte *byteBuffer =  _smallImageFilter.framebufferForOutput.byteBuffer;
-        NSUInteger bytesPerRow =  _smallImageFilter.framebufferForOutput.bytesPerRow;
-        CGFloat widthf = _smallImageFilter.framebufferForOutput.size.width;
-        CGFloat heightf = _smallImageFilter.framebufferForOutput.size.height;
-        size_t width = _smallImageFilter.framebufferForOutput.byteBufferWidth;
-        size_t height = _smallImageFilter.framebufferForOutput.byteBufferHeight;
-        [_effectFilter setBGRASmallImageData:byteBuffer width:width height:height bytesPerRow:bytesPerRow];
-        [_originPicture removeTarget:_smallImageFilter];
-        [_smallImageFilter setEnabled:NO];
-
+    [_originPicture processImageUpToFilter:_effectFilter withCompletionHandler:^(UIImage *processedImage) {
         dispatch_async(dispatch_get_main_queue(), ^{
             for (UIView *view in self->_showView.subviews) {
                 [view removeFromSuperview];
