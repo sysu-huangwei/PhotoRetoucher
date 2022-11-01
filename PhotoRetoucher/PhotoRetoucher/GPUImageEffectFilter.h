@@ -24,6 +24,8 @@ typedef NS_ENUM(NSUInteger, EffectType) {
 
 - (void)setLutImagePath:(NSString *)lutImagePath;
 
+- (void)setStickerImagePath:(NSString *)stickerImagePath;
+
 - (void)setBGRASmallImageData:(unsigned char *)data width:(size_t)width height:(size_t)height bytesPerRow:(size_t)bytesPerRow;
 
 @end

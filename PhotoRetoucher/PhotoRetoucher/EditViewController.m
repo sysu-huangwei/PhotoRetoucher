@@ -70,6 +70,9 @@
         [NSBundle.mainBundle.resourcePath stringByAppendingPathComponent:@"LutResource/brunch4.png"],
     ];
     _currintLutIndex = 0;
+    
+    NSString *stickerPath = [NSBundle.mainBundle.resourcePath stringByAppendingPathComponent:@"sticker.png"];
+    [_effectFilter setStickerImagePath:stickerPath];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
