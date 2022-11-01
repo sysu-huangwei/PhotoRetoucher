@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -52,6 +52,9 @@
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="ZAd-70-3JI" secondAttribute="height" multiplier="3:4" id="Axf-an-KjS"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="8EI-qJ-Enj" appends="YES" id="2gI-AX-whS"/>
+                            </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGY-gC-eea" userLabel="bottomView">
                             <rect key="frame" x="0.0" y="656" width="414" height="240"/>
@@ -191,6 +194,7 @@
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="EhY-Jk-Q7C"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="ZAd-70-3JI" firstAttribute="top" secondItem="cUF-bR-TDH" secondAttribute="bottom" id="6HS-Tm-PjN"/>
                         <constraint firstItem="EhY-Jk-Q7C" firstAttribute="trailing" secondItem="cUF-bR-TDH" secondAttribute="trailing" id="8B0-ky-OQY"/>
@@ -203,12 +207,25 @@
                         <constraint firstItem="yGY-gC-eea" firstAttribute="top" secondItem="ZAd-70-3JI" secondAttribute="bottom" id="ziL-Hv-Oco"/>
                         <constraint firstItem="cUF-bR-TDH" firstAttribute="leading" secondItem="EhY-Jk-Q7C" secondAttribute="leading" id="zlt-9F-JjP"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="hoU-QK-GXV" appends="YES" id="26n-dw-lzG"/>
+                    </connections>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <point key="canvasLocation" x="139" y="72"/>
         </view>
+        <swipeGestureRecognizer direction="right" id="8EI-qJ-Enj">
+            <connections>
+                <action selector="showViewGesture:" destination="-1" id="GTO-Dp-mtv"/>
+            </connections>
+        </swipeGestureRecognizer>
+        <swipeGestureRecognizer direction="left" id="hoU-QK-GXV">
+            <connections>
+                <action selector="showViewGesture:" destination="-1" id="mCv-4N-Xay"/>
+            </connections>
+        </swipeGestureRecognizer>
     </objects>
     <resources>
         <image name="back" width="44" height="44"/>

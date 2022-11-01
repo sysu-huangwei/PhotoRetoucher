@@ -133,6 +133,10 @@
     [_originPicture processImage];
 }
 
+- (IBAction)showViewGesture:(UISwipeGestureRecognizer *)recognizer {
+    
+}
+
 /*
 #pragma mark - Navigation
 
