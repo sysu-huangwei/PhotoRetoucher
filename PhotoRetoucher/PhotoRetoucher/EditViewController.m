@@ -18,6 +18,9 @@
 @property (assign, nonatomic) EffectType currentSelectedEffectType;
 @property (strong, nonatomic) NSMutableDictionary<NSNumber *, NSNumber *> *effectAlpha;
 
+@property (strong, nonatomic) NSArray *lutImagePaths;
+@property (assign, nonatomic) NSUInteger currintLutIndex;
+
 @end
 
 @implementation EditViewController
@@ -58,6 +61,15 @@
         @(EffectType_Sharpen) : @(0.0),
         @(EffectType_Mean) : @(0.0),
     }];
+    
+    _lutImagePaths = @[
+        @"",
+        [NSBundle.mainBundle.resourcePath stringByAppendingPathComponent:@"LutResource/brunch1.png"],
+        [NSBundle.mainBundle.resourcePath stringByAppendingPathComponent:@"LutResource/brunch2.png"],
+        [NSBundle.mainBundle.resourcePath stringByAppendingPathComponent:@"LutResource/brunch3.png"],
+        [NSBundle.mainBundle.resourcePath stringByAppendingPathComponent:@"LutResource/brunch4.png"],
+    ];
+    _currintLutIndex = 0;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -134,7 +146,14 @@
 }
 
 - (IBAction)showViewGesture:(UISwipeGestureRecognizer *)recognizer {
-    
+    if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
+        _currintLutIndex = _currintLutIndex == _lutImagePaths.count - 1 ? 0 : _currintLutIndex + 1;
+    }
+    if (recognizer.direction == UISwipeGestureRecognizerDirectionRight) {
+        _currintLutIndex = _currintLutIndex == 0 ? _lutImagePaths.count - 1 : _currintLutIndex - 1;
+    }
+    [_effectFilter setLutImagePath:_lutImagePaths[_currintLutIndex]];
+    [_originPicture processImage];
 }
 
 /*

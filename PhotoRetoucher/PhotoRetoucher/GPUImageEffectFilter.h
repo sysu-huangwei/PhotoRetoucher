@@ -22,6 +22,8 @@ typedef NS_ENUM(NSUInteger, EffectType) {
 
 - (void)setEffectAlpha:(EffectType)type alpha:(float)alpha;
 
+- (void)setLutImagePath:(NSString *)lutImagePath;
+
 - (void)setBGRASmallImageData:(unsigned char *)data width:(size_t)width height:(size_t)height bytesPerRow:(size_t)bytesPerRow;
 
 @end
