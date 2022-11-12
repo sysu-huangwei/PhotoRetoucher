@@ -426,6 +426,7 @@
 					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/Filters/base\"",
 					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/OpenGLBase\"",
 					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/Define\"",
+					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/DelaunayTriangle\"",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/GPUImage\"",
 				);
@@ -455,6 +456,7 @@
 					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/Filters/base\"",
 					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/OpenGLBase\"",
 					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/Define\"",
+					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/DelaunayTriangle\"",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/GPUImage\"",
 				);
