@@ -6,13 +6,13 @@
 //
 
 #import "ViewController.h"
-#import <GPUImage.h>
+#import "GLView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EditViewController : ViewController
 
-@property (strong, nonatomic) IBOutlet GPUImageView *showView;
+@property (strong, nonatomic) IBOutlet GLView *showView;
 @property (strong, nonatomic) IBOutlet UISlider *effectSlider;
 @property (strong, nonatomic) IBOutlet UILabel *effectSliderLabel;
 @property (strong, nonatomic) UIButton *currentSelectedButton;

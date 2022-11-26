@@ -45,7 +45,7 @@
                                 <constraint firstItem="Nvb-gS-hD4" firstAttribute="top" secondItem="cUF-bR-TDH" secondAttribute="top" id="rk5-kw-I6J"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAd-70-3JI" userLabel="showView" customClass="GPUImageView">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAd-70-3JI" userLabel="showView" customClass="GLView">
                             <rect key="frame" x="0.0" y="104" width="414" height="552"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <gestureRecognizers/>

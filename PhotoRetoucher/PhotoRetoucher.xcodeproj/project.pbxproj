@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A046C3E2911A0F3008BFE23 /* makeup in Resources */ = {isa = PBXBuildFile; fileRef = 3A046C3D2911A0F3008BFE23 /* makeup */; };
+		3A826DA72921FD56000E6ABC /* GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3A826DA62921FD56000E6ABC /* GLView.mm */; };
 		3A8F47142910E03100207B8F /* LutResource in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F47132910E03100207B8F /* LutResource */; };
 		7152F7932739980E008F01BB /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7152F7912739980E008F01BB /* EditViewController.m */; };
 		7152F7942739980E008F01BB /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7152F7922739980E008F01BB /* EditViewController.xib */; };
@@ -44,6 +45,8 @@
 		172D7AE4548BDD4F183A5270 /* libPods-PhotoRetoucher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoRetoucher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6BD7210566C53161E42B22 /* Pods-PhotoRetoucher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoRetoucher.release.xcconfig"; path = "Target Support Files/Pods-PhotoRetoucher/Pods-PhotoRetoucher.release.xcconfig"; sourceTree = "<group>"; };
 		3A046C3D2911A0F3008BFE23 /* makeup */ = {isa = PBXFileReference; lastKnownFileType = folder; name = makeup; path = PhotoRetoucher/makeup; sourceTree = "<group>"; };
+		3A826DA52921FD56000E6ABC /* GLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
+		3A826DA62921FD56000E6ABC /* GLView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GLView.mm; sourceTree = "<group>"; };
 		3A8F47132910E03100207B8F /* LutResource */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LutResource; path = PhotoRetoucher/LutResource; sourceTree = "<group>"; };
 		650443BD9F503650D62AD0D7 /* Pods-PhotoRetoucher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoRetoucher.debug.xcconfig"; path = "Target Support Files/Pods-PhotoRetoucher/Pods-PhotoRetoucher.debug.xcconfig"; sourceTree = "<group>"; };
 		7152F7902739980E008F01BB /* EditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				FCCA1F532739515600D5CFCA /* LaunchScreen.storyboard */,
 				FCCA1F562739515600D5CFCA /* Info.plist */,
 				FCCA1F572739515600D5CFCA /* main.m */,
+				3A826DA52921FD56000E6ABC /* GLView.h */,
+				3A826DA62921FD56000E6ABC /* GLView.mm */,
 			);
 			path = PhotoRetoucher;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 				FCCA1F472739515400D5CFCA /* AppDelegate.m in Sources */,
 				FCCA1F582739515600D5CFCA /* main.m in Sources */,
 				7152F7932739980E008F01BB /* EditViewController.m in Sources */,
+				3A826DA72921FD56000E6ABC /* GLView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +435,7 @@
 					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/DelaunayTriangle\"",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/GPUImage\"",
+					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/OpenGLBase/Platform/iOS\"",
 				);
 				INFOPLIST_FILE = PhotoRetoucher/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -459,6 +466,7 @@
 					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/DelaunayTriangle\"",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/GPUImage\"",
+					"\"$(SRCROOT)/../3rdparty/ImageEffect-OpenGL/ImageEffect/OpenGLBase/Platform/iOS\"",
 				);
 				INFOPLIST_FILE = PhotoRetoucher/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
