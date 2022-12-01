@@ -88,6 +88,8 @@ typedef NS_ENUM(NSUInteger, EffectType) {
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [_showView render: 0.5];
+    [_showView drawRect:_showView.frame];
 //    [_originPicture processImageUpToFilter:_effectFilter withCompletionHandler:^(UIImage *processedImage) {
 //        dispatch_async(dispatch_get_main_queue(), ^{
 //            for (UIView *view in self->_showView.subviews) {
@@ -144,6 +146,8 @@ typedef NS_ENUM(NSUInteger, EffectType) {
 
 - (IBAction)effectSliderChanged:(UISlider *)slider {
     _effectAlpha[@(_currentSelectedEffectType)] = @(slider.value);
+    [_showView render:slider.value];
+    [_showView drawRect:_showView.frame];
 //    [_effectFilter setEffectAlpha:_currentSelectedEffectType alpha:slider.value];
 //    [_originPicture processImage];
 }

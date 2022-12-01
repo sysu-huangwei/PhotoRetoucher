@@ -10,6 +10,7 @@
 #include "EffectEngine.hpp"
 #import "UIImage+TransferImageData.h"
 #include "InputImageFrameBuffer.hpp"
+#include "OutputFrameBuffer.hpp"
 
 @interface GLView()
 {
@@ -20,6 +21,7 @@
     effect::EffectEngine *effectEngine;
     
     std::shared_ptr<effect::InputImageFrameBuffer> inputFrameBuffer;
+    std::shared_ptr<effect::OutputFrameBuffer> outputFrameBuffer;
 }
 @end
 
@@ -58,6 +60,7 @@
         [self setupContext];
         [self setupRenderBuffer];
         [self setupFrameBuffer];
+//        [self render:1.0];
     }
     
     return self;
@@ -87,6 +90,7 @@
 }
 
 - (void)setupRenderBuffer {
+//    [EAGLContext setCurrentContext:_context];
     glGenRenderbuffers(1, &_renderBuffer); //生成和绑定render buffer的API函数
     glBindRenderbuffer(GL_RENDERBUFFER, _renderBuffer);
     //为其分配空间
@@ -94,10 +98,14 @@
 }
 
 - (void)setupFrameBuffer {
+//    [EAGLContext setCurrentContext:_context];
     glGenFramebuffers(1, &_frameBuffer);   //生成和绑定frame buffer的API函数
     glBindFramebuffer(GL_FRAMEBUFFER, _frameBuffer);
     //将renderbuffer跟framebuffer进行绑定
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, _renderBuffer);
+    
+    outputFrameBuffer = std::make_shared<effect::OutputFrameBuffer>();
+    outputFrameBuffer->initWithFrameBufferID(_frameBuffer, self.frame.size.width, self.frame.size.height);
 }
 
 - (void)setupEngine {
@@ -106,20 +114,31 @@
     self->effectEngine = new effect::EffectEngine(configFilePath.UTF8String);
     self->effectEngine->init();
     self->effectEngine->setOutputSize(self.frame.size.width, self.frame.size.height);
-    self->effectEngine->setInputFrameBufferAtIndex(inputFrameBuffer);
     
 }
 
 - (void)setInputImage:(UIImage *)image {
     if (!inputFrameBuffer) {
+        [EAGLContext setCurrentContext:_context];
         inputFrameBuffer = std::make_shared<effect::InputImageFrameBuffer>();
         unsigned char *rgbaData = [image transferToRGBAData];
         inputFrameBuffer->initWithRGBAImageData(rgbaData, (int)image.size.width, (int)image.size.height);
         SAFE_DELETE_ARRAY(rgbaData);
         [self setupEngine];
     } else {
-        
+
     }
+}
+
+- (void)render:(float)r {
+    [EAGLContext setCurrentContext:_context];
+    
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClearColor(r,0.0f,0.0f,1.0f);
+    
+    self->effectEngine->setInputFrameBufferAtIndex(inputFrameBuffer);
+    self->effectEngine->renderToFrameBuffer(outputFrameBuffer);
+    [_context presentRenderbuffer:_renderBuffer];
 }
 
 @end
