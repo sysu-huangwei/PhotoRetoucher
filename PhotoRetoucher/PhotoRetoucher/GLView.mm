@@ -130,11 +130,8 @@
     }
 }
 
-- (void)render:(float)r {
+- (void)render {
     [EAGLContext setCurrentContext:_context];
-    
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glClearColor(r,0.0f,0.0f,1.0f);
     
     self->effectEngine->setInputFrameBufferAtIndex(inputFrameBuffer);
     self->effectEngine->renderToFrameBuffer(outputFrameBuffer);
