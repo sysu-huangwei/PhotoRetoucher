@@ -22,6 +22,10 @@
     
     std::shared_ptr<effect::InputImageFrameBuffer> inputFrameBuffer;
     std::shared_ptr<effect::OutputFrameBuffer> outputFrameBuffer;
+    
+    std::vector<BasePoint> mesh;
+    std::vector<BasePoint> meshStd;
+    std::vector<unsigned int> meshIndex;
 }
 @end
 
@@ -38,6 +42,7 @@
         [self setupContext];
         [self setupRenderBuffer];
         [self setupFrameBuffer];
+        [self setupMesh];
     }
     
     return self;
@@ -49,6 +54,7 @@
         [self setupContext];
         [self setupRenderBuffer];
         [self setupFrameBuffer];
+        [self setupMesh];
     }
     
     return self;
@@ -60,7 +66,7 @@
         [self setupContext];
         [self setupRenderBuffer];
         [self setupFrameBuffer];
-//        [self render:1.0];
+        [self setupMesh];
     }
     
     return self;
@@ -122,6 +128,19 @@
     
 }
 
+- (void)setupMesh {
+    mesh.push_back(BasePoint(0.3, 0.3));
+    mesh.push_back(BasePoint(0.7, 0.3));
+    mesh.push_back(BasePoint(0.5, 0.7));
+    
+    meshStd.push_back(BasePoint(0.25, 0.25));
+    meshStd.push_back(BasePoint(0.75, 0.25));
+    meshStd.push_back(BasePoint(0.5, 0.75));
+    
+    meshIndex = {0, 1, 2};
+    
+}
+
 - (void)setInputImage:(UIImage *)image {
     if (!inputFrameBuffer) {
         [EAGLContext setCurrentContext:_context];
@@ -138,19 +157,7 @@
 - (void)render {
     [EAGLContext setCurrentContext:_context];
     
-    std::vector<BasePoint> mesh;
-    mesh.push_back(BasePoint(0.3, 0.3));
-    mesh.push_back(BasePoint(0.7, 0.3));
-    mesh.push_back(BasePoint(0.5, 0.7));
-    
-    std::vector<BasePoint> meshStd;
-    meshStd.push_back(BasePoint(0.25, 0.25));
-    meshStd.push_back(BasePoint(0.75, 0.25));
-    meshStd.push_back(BasePoint(0.5, 0.75));
-    
-    unsigned int meshIndex[] = {0, 1, 2};
-    
-    self->effectEngine->setMesh(mesh, meshStd, meshIndex, 3);
+    self->effectEngine->setMesh(mesh, meshStd, meshIndex.data(), 3);
     
     self->effectEngine->setInputFrameBufferAtIndex(inputFrameBuffer);
     self->effectEngine->renderToFrameBuffer(outputFrameBuffer);
