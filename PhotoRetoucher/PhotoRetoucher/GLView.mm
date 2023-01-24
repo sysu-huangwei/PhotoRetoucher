@@ -158,14 +158,14 @@
 
 - (void)changeMesh:(float)alpha {
     float changeValue = 0.1 * (alpha * 2.0 - 1.0);
-    mesh[4].x -= changeValue;
-    mesh[4].y -= changeValue;
-    mesh[5].x += changeValue;
-    mesh[5].y -= changeValue;
-    mesh[6].x -= changeValue;
-    mesh[6].y += changeValue;
-    mesh[7].x += changeValue;
-    mesh[7].y += changeValue;
+    mesh[4].x = meshStd[4].x - changeValue;
+    mesh[4].y = meshStd[4].y - changeValue;
+    mesh[5].x = meshStd[5].x + changeValue;
+    mesh[5].y = meshStd[5].y - changeValue;
+    mesh[6].x = meshStd[6].x - changeValue;
+    mesh[6].y = meshStd[6].y + changeValue;
+    mesh[7].x = meshStd[7].x + changeValue;
+    mesh[7].y = meshStd[7].y + changeValue;
 }
 
 - (void)setInputImage:(UIImage *)image {

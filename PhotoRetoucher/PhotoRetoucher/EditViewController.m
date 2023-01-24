@@ -133,6 +133,8 @@
            _effectSlider.value = _effectAlpha[@(EffectType_Mesh)] ? [_effectAlpha[@(EffectType_Mesh)] floatValue] : 0.5;
        }
         _effectSlider.hidden = NO;
+        _effectSliderLabel.hidden = NO;
+        _effectSliderLabel.text = [NSString stringWithFormat:@"%d", (int)(_effectSlider.value * 100)];
         [_currentSelectedButton setBackgroundColor:UIColor.systemTealColor];
         [button  setBackgroundColor:UIColor.systemOrangeColor];
         _currentSelectedButton = button;
@@ -142,6 +144,7 @@
 
 - (IBAction)effectSliderChanged:(UISlider *)slider {
     _effectAlpha[@(_currentSelectedEffectType)] = @(slider.value);
+    _effectSliderLabel.text = [NSString stringWithFormat:@"%d", (int)(slider.value * 100)];
     [_showView setEffectAlpha:_currentSelectedEffectType alpha:slider.value];
     [_showView render];
 }
