@@ -138,6 +138,20 @@
 - (void)render {
     [EAGLContext setCurrentContext:_context];
     
+    std::vector<BasePoint> mesh;
+    mesh.push_back(BasePoint(0.3, 0.3));
+    mesh.push_back(BasePoint(0.7, 0.3));
+    mesh.push_back(BasePoint(0.5, 0.7));
+    
+    std::vector<BasePoint> meshStd;
+    meshStd.push_back(BasePoint(0.25, 0.25));
+    meshStd.push_back(BasePoint(0.75, 0.25));
+    meshStd.push_back(BasePoint(0.5, 0.75));
+    
+    unsigned int meshIndex[] = {0, 1, 2};
+    
+    self->effectEngine->setMesh(mesh, meshStd, meshIndex, 3);
+    
     self->effectEngine->setInputFrameBufferAtIndex(inputFrameBuffer);
     self->effectEngine->renderToFrameBuffer(outputFrameBuffer);
     [_context presentRenderbuffer:_renderBuffer];
