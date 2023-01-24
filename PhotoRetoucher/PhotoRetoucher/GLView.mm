@@ -129,16 +129,43 @@
 }
 
 - (void)setupMesh {
-    mesh.push_back(BasePoint(0.3, 0.3));
-    mesh.push_back(BasePoint(0.7, 0.3));
-    mesh.push_back(BasePoint(0.5, 0.7));
+    mesh.push_back(BasePoint(0, 0));
+    mesh.push_back(BasePoint(1, 0));
+    mesh.push_back(BasePoint(0, 1));
+    mesh.push_back(BasePoint(1, 1));
+    
+    mesh.push_back(BasePoint(0.25, 0.25));
+    mesh.push_back(BasePoint(0.75, 0.25));
+    mesh.push_back(BasePoint(0.25, 0.75));
+    mesh.push_back(BasePoint(0.75, 0.75));
+    
+    meshStd.push_back(BasePoint(0, 0));
+    meshStd.push_back(BasePoint(1, 0));
+    meshStd.push_back(BasePoint(0, 1));
+    meshStd.push_back(BasePoint(1, 1));
     
     meshStd.push_back(BasePoint(0.25, 0.25));
     meshStd.push_back(BasePoint(0.75, 0.25));
-    meshStd.push_back(BasePoint(0.5, 0.75));
+    meshStd.push_back(BasePoint(0.25, 0.75));
+    meshStd.push_back(BasePoint(0.75, 0.75));
     
-    meshIndex = {0, 1, 2};
+    meshIndex = {
+        0,1,4, 1,4,5, 2,0,6, 0,4,6, 2,6,7, 2,7,3, 5,7,3, 1,5,3,
+        4,6,7, 4,5,7
+    };
     
+}
+
+- (void)changeMesh:(float)alpha {
+    float changeValue = 0.1 * (alpha * 2.0 - 1.0);
+    mesh[4].x -= changeValue;
+    mesh[4].y -= changeValue;
+    mesh[5].x += changeValue;
+    mesh[5].y -= changeValue;
+    mesh[6].x -= changeValue;
+    mesh[6].y += changeValue;
+    mesh[7].x += changeValue;
+    mesh[7].y += changeValue;
 }
 
 - (void)setInputImage:(UIImage *)image {
@@ -157,7 +184,7 @@
 - (void)render {
     [EAGLContext setCurrentContext:_context];
     
-    self->effectEngine->setMesh(mesh, meshStd, meshIndex.data(), 3);
+    self->effectEngine->setMesh(mesh, meshStd, meshIndex.data(), meshIndex.size());
     
     self->effectEngine->setInputFrameBufferAtIndex(inputFrameBuffer);
     self->effectEngine->renderToFrameBuffer(outputFrameBuffer);
@@ -198,6 +225,9 @@
                 { FilterParam_Mean_Alpha, std::to_string(alpha) }
             };
             break;
+        case EffectType_Mesh:
+            [self changeMesh:alpha];
+            return;
         default:
             break;
     }

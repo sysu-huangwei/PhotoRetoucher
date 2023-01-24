@@ -16,6 +16,7 @@ typedef NS_ENUM(NSUInteger, EffectType) {
     EffectType_Level = 4,
     EffectType_Sharpen = 5,
     EffectType_Mean = 6,
+    EffectType_Mesh = 7,
 };
 
 @interface GLView : UIView

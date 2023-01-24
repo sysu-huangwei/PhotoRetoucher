@@ -70,7 +70,7 @@
                             <rect key="frame" x="10" y="40" width="394" height="80"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96Z-4v-XE2">
-                                    <rect key="frame" x="0.0" y="0.0" width="500" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="80"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdV-xa-ZRb">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -112,40 +112,59 @@
                                                 <action selector="clickSomeEffectButton:" destination="-1" eventType="touchUpInside" id="UfO-uV-bk8"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E01-zg-W4d">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E01-zg-W4d">
                                             <rect key="frame" x="400" y="0.0" width="80" height="80"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" systemColor="systemTealColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="E01-zg-W4d" secondAttribute="height" multiplier="1:1" id="I7L-I0-fWB"/>
+                                            </constraints>
                                             <state key="normal" title="模糊"/>
                                             <connections>
                                                 <action selector="clickSomeEffectButton:" destination="-1" eventType="touchUpInside" id="eyH-4d-AvX"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xje-nC-k7e">
+                                            <rect key="frame" x="480" y="0.0" width="80" height="80"/>
+                                            <color key="backgroundColor" systemColor="systemTealColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Xje-nC-k7e" secondAttribute="height" multiplier="1:1" id="XSq-uQ-rB2"/>
+                                            </constraints>
+                                            <state key="normal" title="形变"/>
+                                            <connections>
+                                                <action selector="clickSomeEffectButton:" destination="-1" eventType="touchUpInside" id="4mI-kU-OnL"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="WdV-xa-ZRb" firstAttribute="leading" secondItem="96Z-4v-XE2" secondAttribute="leading" id="2Oe-Hq-5ca"/>
+                                        <constraint firstItem="E01-zg-W4d" firstAttribute="leading" secondItem="jX6-48-ENg" secondAttribute="trailing" id="3k6-RW-Gev"/>
                                         <constraint firstItem="D4A-wa-dxY" firstAttribute="width" secondItem="96Z-4v-XE2" secondAttribute="height" id="5el-sA-tK1"/>
                                         <constraint firstItem="Xkd-8y-cRi" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="5vN-10-xjb"/>
                                         <constraint firstItem="jX6-48-ENg" firstAttribute="leading" secondItem="D4A-wa-dxY" secondAttribute="trailing" id="Bcw-r8-Yg4"/>
                                         <constraint firstItem="PLB-Gk-pMe" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="DRA-7u-7qW"/>
                                         <constraint firstItem="PLB-Gk-pMe" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="Dgo-9K-ywl"/>
                                         <constraint firstItem="jX6-48-ENg" firstAttribute="width" secondItem="96Z-4v-XE2" secondAttribute="height" multiplier="1:1" id="GiD-oc-mr8"/>
+                                        <constraint firstItem="Xje-nC-k7e" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="HMX-Tf-Udc"/>
                                         <constraint firstItem="Xkd-8y-cRi" firstAttribute="leading" secondItem="WdV-xa-ZRb" secondAttribute="trailing" id="ITC-LR-pZz"/>
                                         <constraint firstItem="D4A-wa-dxY" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="Kbg-hk-q5t"/>
                                         <constraint firstItem="jX6-48-ENg" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="LsW-qT-DQd"/>
                                         <constraint firstItem="WdV-xa-ZRb" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="QZW-vn-OHj"/>
                                         <constraint firstItem="D4A-wa-dxY" firstAttribute="leading" secondItem="PLB-Gk-pMe" secondAttribute="trailing" id="WVX-kg-Ntv"/>
                                         <constraint firstItem="Xkd-8y-cRi" firstAttribute="width" secondItem="96Z-4v-XE2" secondAttribute="height" id="Yh3-zi-X5A"/>
+                                        <constraint firstItem="Xje-nC-k7e" firstAttribute="leading" secondItem="E01-zg-W4d" secondAttribute="trailing" id="YoH-FG-sVn"/>
                                         <constraint firstItem="jX6-48-ENg" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="bBX-71-6Y3"/>
                                         <constraint firstItem="WdV-xa-ZRb" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="eIb-GM-JhT"/>
                                         <constraint firstItem="WdV-xa-ZRb" firstAttribute="width" secondItem="96Z-4v-XE2" secondAttribute="height" id="f0F-IL-TEs"/>
                                         <constraint firstItem="PLB-Gk-pMe" firstAttribute="width" secondItem="96Z-4v-XE2" secondAttribute="height" id="gLu-cQ-053"/>
                                         <constraint firstItem="Xkd-8y-cRi" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="hlF-uD-MC1"/>
                                         <constraint firstItem="D4A-wa-dxY" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="jLH-B7-0LR"/>
-                                        <constraint firstAttribute="width" constant="500" id="lF1-ct-AHn"/>
+                                        <constraint firstAttribute="width" constant="1000" id="lF1-ct-AHn"/>
                                         <constraint firstItem="PLB-Gk-pMe" firstAttribute="leading" secondItem="Xkd-8y-cRi" secondAttribute="trailing" id="mVe-hj-HqH"/>
+                                        <constraint firstItem="E01-zg-W4d" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="mqr-tE-HJy"/>
                                         <constraint firstAttribute="height" constant="80" id="pMw-zT-CX5"/>
+                                        <constraint firstItem="Xje-nC-k7e" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="rgX-a9-OAa"/>
+                                        <constraint firstItem="E01-zg-W4d" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="vdq-hg-fiz"/>
                                     </constraints>
                                 </view>
                             </subviews>
