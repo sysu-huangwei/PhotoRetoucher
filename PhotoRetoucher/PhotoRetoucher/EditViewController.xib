@@ -134,6 +134,17 @@
                                                 <action selector="clickSomeEffectButton:" destination="-1" eventType="touchUpInside" id="4mI-kU-OnL"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCI-br-w5W">
+                                            <rect key="frame" x="560" y="0.0" width="80" height="80"/>
+                                            <color key="backgroundColor" systemColor="systemTealColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="KCI-br-w5W" secondAttribute="height" multiplier="1:1" id="Gag-H7-5qc"/>
+                                            </constraints>
+                                            <state key="normal" title="贴纸"/>
+                                            <connections>
+                                                <action selector="clickSomeEffectButton:" destination="-1" eventType="touchUpInside" id="cnx-68-HCK"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
@@ -149,10 +160,12 @@
                                         <constraint firstItem="Xkd-8y-cRi" firstAttribute="leading" secondItem="WdV-xa-ZRb" secondAttribute="trailing" id="ITC-LR-pZz"/>
                                         <constraint firstItem="D4A-wa-dxY" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="Kbg-hk-q5t"/>
                                         <constraint firstItem="jX6-48-ENg" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="LsW-qT-DQd"/>
+                                        <constraint firstItem="KCI-br-w5W" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="M9u-77-tJ5"/>
                                         <constraint firstItem="WdV-xa-ZRb" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="QZW-vn-OHj"/>
                                         <constraint firstItem="D4A-wa-dxY" firstAttribute="leading" secondItem="PLB-Gk-pMe" secondAttribute="trailing" id="WVX-kg-Ntv"/>
                                         <constraint firstItem="Xkd-8y-cRi" firstAttribute="width" secondItem="96Z-4v-XE2" secondAttribute="height" id="Yh3-zi-X5A"/>
                                         <constraint firstItem="Xje-nC-k7e" firstAttribute="leading" secondItem="E01-zg-W4d" secondAttribute="trailing" id="YoH-FG-sVn"/>
+                                        <constraint firstItem="KCI-br-w5W" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="adH-0a-tJv"/>
                                         <constraint firstItem="jX6-48-ENg" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="bBX-71-6Y3"/>
                                         <constraint firstItem="WdV-xa-ZRb" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="eIb-GM-JhT"/>
                                         <constraint firstItem="WdV-xa-ZRb" firstAttribute="width" secondItem="96Z-4v-XE2" secondAttribute="height" id="f0F-IL-TEs"/>
@@ -162,6 +175,7 @@
                                         <constraint firstAttribute="width" constant="1000" id="lF1-ct-AHn"/>
                                         <constraint firstItem="PLB-Gk-pMe" firstAttribute="leading" secondItem="Xkd-8y-cRi" secondAttribute="trailing" id="mVe-hj-HqH"/>
                                         <constraint firstItem="E01-zg-W4d" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="mqr-tE-HJy"/>
+                                        <constraint firstItem="KCI-br-w5W" firstAttribute="leading" secondItem="Xje-nC-k7e" secondAttribute="trailing" id="mzA-Lp-VBM"/>
                                         <constraint firstAttribute="height" constant="80" id="pMw-zT-CX5"/>
                                         <constraint firstItem="Xje-nC-k7e" firstAttribute="centerY" secondItem="96Z-4v-XE2" secondAttribute="centerY" id="rgX-a9-OAa"/>
                                         <constraint firstItem="E01-zg-W4d" firstAttribute="height" secondItem="96Z-4v-XE2" secondAttribute="height" id="vdq-hg-fiz"/>

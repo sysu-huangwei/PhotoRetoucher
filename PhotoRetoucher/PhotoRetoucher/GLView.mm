@@ -26,6 +26,8 @@
     std::vector<BasePoint> mesh;
     std::vector<BasePoint> meshStd;
     std::vector<unsigned int> meshIndex;
+    
+    std::string stickerPath;
 }
 @end
 
@@ -154,6 +156,8 @@
         4,6,7, 4,5,7
     };
     
+    stickerPath = [NSBundle.mainBundle.bundlePath stringByAppendingPathComponent:@"makeup/makeup.png"].UTF8String;
+    
 }
 
 - (void)changeMesh:(float)alpha {
@@ -185,6 +189,7 @@
     [EAGLContext setCurrentContext:_context];
     
     self->effectEngine->setMesh(mesh, meshStd, meshIndex.data(), meshIndex.size());
+    self->effectEngine->setSticker(stickerPath);
     
     self->effectEngine->setInputFrameBufferAtIndex(inputFrameBuffer);
     self->effectEngine->renderToFrameBuffer(outputFrameBuffer);
@@ -228,6 +233,11 @@
         case EffectType_Mesh:
             [self changeMesh:alpha];
             return;
+        case EffectType_Sticker:
+            params = {
+                { FilterParam_Sticker_Alpha, std::to_string(alpha) }
+            };
+            break;
         default:
             break;
     }

@@ -131,7 +131,12 @@
            _effectSlider.maximumValue = 1.0;
            _effectSlider.minimumValue = 0;
            _effectSlider.value = _effectAlpha[@(EffectType_Mesh)] ? [_effectAlpha[@(EffectType_Mesh)] floatValue] : 0.5;
-       }
+        } else if ([button.currentTitle isEqualToString:@"贴纸"]) {
+           _currentSelectedEffectType = EffectType_Sticker;
+           _effectSlider.maximumValue = 1.0;
+           _effectSlider.minimumValue = 0;
+           _effectSlider.value = _effectAlpha[@(EffectType_Sticker)] ? [_effectAlpha[@(EffectType_Sticker)] floatValue] : 1.0;
+        }
         _effectSlider.hidden = NO;
         _effectSliderLabel.hidden = NO;
         _effectSliderLabel.text = [NSString stringWithFormat:@"%d", (int)(_effectSlider.value * 100)];
