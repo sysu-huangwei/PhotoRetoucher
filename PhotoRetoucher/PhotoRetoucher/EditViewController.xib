@@ -202,7 +202,8 @@
                         <constraint firstAttribute="width" secondItem="ZAd-70-3JI" secondAttribute="height" multiplier="3:4" id="Axf-an-KjS"/>
                     </constraints>
                     <connections>
-                        <outletCollection property="gestureRecognizers" destination="8EI-qJ-Enj" appends="YES" id="2gI-AX-whS"/>
+                        <outletCollection property="gestureRecognizers" destination="ugC-oi-IzI" appends="YES" id="Rya-uM-NeV"/>
+                        <outletCollection property="gestureRecognizers" destination="FVM-ov-Qo3" appends="YES" id="CKD-Lm-S9e"/>
                     </connections>
                 </view>
             </subviews>
@@ -222,14 +223,14 @@
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="71.651785714285708"/>
         </view>
-        <swipeGestureRecognizer direction="right" id="8EI-qJ-Enj">
+        <swipeGestureRecognizer direction="left" id="ugC-oi-IzI">
             <connections>
-                <action selector="showViewGesture:" destination="-1" id="GTO-Dp-mtv"/>
+                <action selector="showViewGesture:" destination="-1" id="oXU-k0-oDN"/>
             </connections>
         </swipeGestureRecognizer>
-        <swipeGestureRecognizer direction="left" id="hoU-QK-GXV">
+        <swipeGestureRecognizer direction="right" id="FVM-ov-Qo3">
             <connections>
-                <action selector="showViewGesture:" destination="-1" id="mCv-4N-Xay"/>
+                <action selector="showViewGesture:" destination="-1" id="pYr-cZ-Exn"/>
             </connections>
         </swipeGestureRecognizer>
     </objects>
