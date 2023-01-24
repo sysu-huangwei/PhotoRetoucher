@@ -104,6 +104,11 @@
     //将renderbuffer跟framebuffer进行绑定
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, _renderBuffer);
     
+    GLint backingWidth, backingHeight;
+
+    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &backingWidth);
+    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &backingHeight);
+    
     outputFrameBuffer = std::make_shared<effect::OutputFrameBuffer>();
     outputFrameBuffer->initWithFrameBufferID(_frameBuffer, self.frame.size.width, self.frame.size.height);
 }
@@ -136,6 +141,46 @@
     self->effectEngine->setInputFrameBufferAtIndex(inputFrameBuffer);
     self->effectEngine->renderToFrameBuffer(outputFrameBuffer);
     [_context presentRenderbuffer:_renderBuffer];
+}
+
+
+- (void)setEffectAlpha:(EffectType)type alpha:(float)alpha {
+    std::map<std::string, std::string> params;
+    switch (type) {
+        case EffectType_Brightness:
+            params = {
+                { FilterParam_Brightness_Alpha, std::to_string(alpha) }
+            };
+            break;
+        case EffectType_Contrast:
+            params = {
+                { FilterParam_Contrast_Alpha, std::to_string(alpha) }
+            };
+            break;
+        case EffectType_Saturation:
+            params = {
+                { FilterParam_Saturation_Alpha, std::to_string(alpha) }
+            };
+            break;
+        case EffectType_Level:
+            params = {
+                { FilterParam_Level_Midtone, std::to_string(alpha) }
+            };
+            break;
+        case EffectType_Sharpen:
+            params = {
+                { FilterParam_Sharpen_Alpha, std::to_string(alpha) }
+            };
+            break;
+        case EffectType_Mean:
+            params = {
+                { FilterParam_Mean_Alpha, std::to_string(alpha) }
+            };
+            break;
+        default:
+            break;
+    }
+    effectEngine->setParams(params);
 }
 
 @end

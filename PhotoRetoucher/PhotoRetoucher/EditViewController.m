@@ -7,14 +7,6 @@
 
 #import "EditViewController.h"
 
-typedef NS_ENUM(NSUInteger, EffectType) {
-    EffectType_Brightness = 1,
-    EffectType_Contrast = 2,
-    EffectType_Saturation = 3,
-    EffectType_Level = 4,
-    EffectType_Sharpen = 5,
-    EffectType_Mean = 6,
-};
 
 
 @interface EditViewController ()
@@ -145,10 +137,8 @@ typedef NS_ENUM(NSUInteger, EffectType) {
 
 - (IBAction)effectSliderChanged:(UISlider *)slider {
     _effectAlpha[@(_currentSelectedEffectType)] = @(slider.value);
+    [_showView setEffectAlpha:_currentSelectedEffectType alpha:slider.value];
     [_showView render];
-    [_showView drawRect:_showView.frame];
-//    [_effectFilter setEffectAlpha:_currentSelectedEffectType alpha:slider.value];
-//    [_originPicture processImage];
 }
 
 - (IBAction)showViewGesture:(UISwipeGestureRecognizer *)recognizer {

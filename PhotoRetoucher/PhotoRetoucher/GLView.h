@@ -9,11 +9,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, EffectType) {
+    EffectType_Brightness = 1,
+    EffectType_Contrast = 2,
+    EffectType_Saturation = 3,
+    EffectType_Level = 4,
+    EffectType_Sharpen = 5,
+    EffectType_Mean = 6,
+};
+
 @interface GLView : UIView
 
 - (void)setInputImage:(UIImage *)image;
 
 - (void)render;
+
+- (void)setEffectAlpha:(EffectType)type alpha:(float)alpha;
 
 @end
 
