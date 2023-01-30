@@ -136,20 +136,20 @@
     mesh.push_back(BasePoint(0, 1));
     mesh.push_back(BasePoint(1, 1));
     
-    mesh.push_back(BasePoint(0.25, 0.25));
-    mesh.push_back(BasePoint(0.75, 0.25));
-    mesh.push_back(BasePoint(0.25, 0.75));
-    mesh.push_back(BasePoint(0.75, 0.75));
+    mesh.push_back(BasePoint(0.35, 0.35));
+    mesh.push_back(BasePoint(0.65, 0.35));
+    mesh.push_back(BasePoint(0.35, 0.65));
+    mesh.push_back(BasePoint(0.65, 0.65));
     
     meshStd.push_back(BasePoint(0, 0));
     meshStd.push_back(BasePoint(1, 0));
     meshStd.push_back(BasePoint(0, 1));
     meshStd.push_back(BasePoint(1, 1));
     
-    meshStd.push_back(BasePoint(0.25, 0.25));
-    meshStd.push_back(BasePoint(0.75, 0.25));
-    meshStd.push_back(BasePoint(0.25, 0.75));
-    meshStd.push_back(BasePoint(0.75, 0.75));
+    meshStd.push_back(BasePoint(0.35, 0.35));
+    meshStd.push_back(BasePoint(0.65, 0.35));
+    meshStd.push_back(BasePoint(0.35, 0.65));
+    meshStd.push_back(BasePoint(0.65, 0.65));
     
     meshIndex = {
         0,1,4, 1,4,5, 2,0,6, 0,4,6, 2,6,7, 2,7,3, 5,7,3, 1,5,3,
@@ -161,7 +161,7 @@
 }
 
 - (void)changeMesh:(float)alpha {
-    float changeValue = 0.1 * (alpha * 2.0 - 1.0);
+    float changeValue = 0.01 * (alpha * 2.0 - 1.0);
     mesh[4].x = meshStd[4].x - changeValue;
     mesh[4].y = meshStd[4].y - changeValue;
     mesh[5].x = meshStd[5].x + changeValue;
