@@ -227,7 +227,7 @@
             break;
         case EffectType_Mean:
             params = {
-                { FilterParam_Mean_Alpha, std::to_string(alpha) }
+                { FilterParam_Smooth_Alpha, std::to_string(alpha) }
             };
             break;
         case EffectType_Mesh:
