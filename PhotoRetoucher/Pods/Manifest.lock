@@ -1,8 +1,14 @@
 PODS:
   - GPUImage (0.1.7)
+  - Toast (4.0.0)
 
 DEPENDENCIES:
   - GPUImage (from `https://github.com/sysu-huangwei/GPUImage.git`, branch `master`)
+  - Toast
+
+SPEC REPOS:
+  trunk:
+    - Toast
 
 EXTERNAL SOURCES:
   GPUImage:
@@ -16,7 +22,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   GPUImage: 118d91933da9e0f552210de89c9bcda1712230f5
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 5849d1466bbccbea619cbf80242ab49db683fefb
+PODFILE CHECKSUM: bfa2b8e8fd981012abace9ea034c975adad19082
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3

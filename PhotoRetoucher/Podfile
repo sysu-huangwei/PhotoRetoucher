@@ -8,4 +8,6 @@ target 'PhotoRetoucher' do
   pod 'GPUImage', :git => 'https://github.com/sysu-huangwei/GPUImage.git', :branch => 'master'
 #  pod 'GPUImage', :path => '../../GPUImage'
 
+  pod 'Toast'
+
 end

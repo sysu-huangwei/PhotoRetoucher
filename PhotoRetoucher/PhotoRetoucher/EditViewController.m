@@ -6,6 +6,7 @@
 //
 
 #import "EditViewController.h"
+#import "UIView+Toast.h"
 
 
 
@@ -168,7 +169,20 @@
 
 - (IBAction)saveImage:(id)sender {
     UIImage *image = [_showView saveImage];
+    if (image) {
+        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    }
 }
+
+
+-(void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if(error) {
+        [self.view makeToast:@"保存失败"];
+    }else {
+        [self.view makeToast:@"保存成功"];
+    }
+}
+
 
 /*
 #pragma mark - Navigation
