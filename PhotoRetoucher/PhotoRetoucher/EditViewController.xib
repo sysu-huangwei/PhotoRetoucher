@@ -47,6 +47,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBg-kE-L4g">
                             <rect key="frame" x="162" y="125" width="90" height="72"/>
                             <state key="normal" image="confirm"/>
+                            <connections>
+                                <action selector="saveImage:" destination="-1" eventType="touchUpInside" id="7vd-fu-aei"/>
+                            </connections>
                         </button>
                         <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="L5H-82-B6k">
                             <rect key="frame" x="8" y="5" width="358" height="31"/>

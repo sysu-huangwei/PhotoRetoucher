@@ -30,6 +30,8 @@ typedef NS_ENUM(NSUInteger, EffectType) {
 
 - (void)setLutImagePath:(NSString *)lutImagePath;
 
+- (UIImage *)saveImage;
+
 @end
 
 NS_ASSUME_NONNULL_END

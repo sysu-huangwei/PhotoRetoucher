@@ -166,6 +166,10 @@
 //    [_originPicture processImage];
 }
 
+- (IBAction)saveImage:(id)sender {
+    UIImage *image = [_showView saveImage];
+}
+
 /*
 #pragma mark - Navigation
 

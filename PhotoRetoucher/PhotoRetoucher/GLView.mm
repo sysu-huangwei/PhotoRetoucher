@@ -11,6 +11,7 @@
 #import "UIImage+TransferImageData.h"
 #include "InputImageFrameBuffer.hpp"
 #include "OutputFrameBuffer.hpp"
+#import "UIImage+TransferImageData.h"
 
 @interface GLView()
 {
@@ -249,6 +250,34 @@
         { FilterParam_Lut_Path, std::string(lutImagePath.UTF8String) }
     };
     self->effectEngine->setParams(params);
+}
+
+- (UIImage *)saveImage {
+    std::shared_ptr<effect::FrameBuffer> frameBuffer = std::make_shared<effect::FrameBuffer>();
+    frameBuffer->init(inputFrameBuffer->getWidth(), inputFrameBuffer->getHeight());
+    
+    self->effectEngine->setInputFrameBufferAtIndex(inputFrameBuffer);
+    self->effectEngine->setOutputSize(inputFrameBuffer->getWidth(), inputFrameBuffer->getHeight());
+    self->effectEngine->renderToFrameBuffer(frameBuffer);
+    
+    glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer->getFrameBufferID());
+    unsigned char *pixels = new unsigned char[inputFrameBuffer->getWidth() * inputFrameBuffer->getHeight() * 4];
+    glReadPixels(0, 0, inputFrameBuffer->getWidth(), inputFrameBuffer->getHeight(), GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+    glFinish();
+    
+    unsigned char *pixelsNew = new unsigned char[inputFrameBuffer->getWidth() * inputFrameBuffer->getHeight() * 4];
+    for (int i = 0; i < inputFrameBuffer->getHeight(); i++) {
+        memcpy(pixelsNew + inputFrameBuffer->getWidth() * i * 4, pixels + inputFrameBuffer->getWidth() * (inputFrameBuffer->getHeight()-1-i) * 4, inputFrameBuffer->getWidth() * 4);
+    }
+    delete [] pixels;
+    
+    UIImage *image = [UIImage transferToImageWithRGBAData:pixelsNew withWidth:inputFrameBuffer->getWidth() withHeight:inputFrameBuffer->getHeight()];
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    delete [] pixelsNew;
+    
+    frameBuffer->release();
+    
+    return image;
 }
 
 @end
