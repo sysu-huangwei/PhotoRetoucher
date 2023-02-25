@@ -37,7 +37,7 @@
         UIGraphicsEndImageContext();
     }
 
-    [_editViewController setInputImage:image]
+    [_editViewController setInputImage:image];
     [self presentViewController:_editViewController animated:YES completion:nil];
 }
 
