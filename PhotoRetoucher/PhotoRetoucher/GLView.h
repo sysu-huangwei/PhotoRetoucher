@@ -28,6 +28,8 @@ typedef NS_ENUM(NSUInteger, EffectType) {
 
 - (void)setEffectAlpha:(EffectType)type alpha:(float)alpha;
 
+- (void)setLutImagePath:(NSString *)lutImagePath;
+
 @end
 
 NS_ASSUME_NONNULL_END

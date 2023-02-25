@@ -161,7 +161,8 @@
     if (recognizer.direction == UISwipeGestureRecognizerDirectionRight) {
         _currintLutIndex = _currintLutIndex == 0 ? _lutImagePaths.count - 1 : _currintLutIndex - 1;
     }
-//    [_effectFilter setLutImagePath:_lutImagePaths[_currintLutIndex]];
+    [_showView setLutImagePath:_lutImagePaths[_currintLutIndex]];
+    [_showView render];
 //    [_originPicture processImage];
 }
 

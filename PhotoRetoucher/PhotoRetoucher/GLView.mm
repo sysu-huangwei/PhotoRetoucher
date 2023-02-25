@@ -244,4 +244,11 @@
     effectEngine->setParams(params);
 }
 
+- (void)setLutImagePath:(NSString *)lutImagePath {
+    std::map<std::string, std::string> params = {
+        { FilterParam_Lut_Path, std::string(lutImagePath.UTF8String) }
+    };
+    self->effectEngine->setParams(params);
+}
+
 @end
