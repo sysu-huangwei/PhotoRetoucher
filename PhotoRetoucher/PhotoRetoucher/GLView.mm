@@ -75,6 +75,19 @@
     return self;
 }
 
+
+- (void)releaseGL {
+    [EAGLContext setCurrentContext:_context];
+    if (inputFrameBuffer) {
+        inputFrameBuffer->release();
+        inputFrameBuffer = nullptr;
+    }
+    if (effectEngine) {
+        effectEngine->release();
+        effectEngine = nullptr;
+    }
+}
+
 - (void)setupLayer {
     _eaglLayer = (CAEAGLLayer*) self.layer;
     

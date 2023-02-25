@@ -31,6 +31,9 @@
                                 <constraint firstAttribute="width" secondItem="Nvb-gS-hD4" secondAttribute="height" multiplier="1:1" id="MiJ-0t-rvM"/>
                             </constraints>
                             <state key="normal" image="back"/>
+                            <connections>
+                                <action selector="back:" destination="-1" eventType="touchUpInside" id="SJu-UU-wPg"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>

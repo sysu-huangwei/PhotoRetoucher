@@ -9,14 +9,15 @@
 #import "EditViewController.h"
 
 @interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
-
+@property (nonatomic, nonnull) EditViewController* editViewController;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _editViewController = [[EditViewController alloc] init];
+    _editViewController.modalPresentationStyle = UIModalPresentationFullScreen;
 }
 
 - (IBAction)openAlbum:(id)sender {
@@ -35,9 +36,9 @@
         image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
     }
-    EditViewController* editViewController = [[EditViewController alloc] initWithOriginImage:image];
-    editViewController.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:editViewController animated:YES completion:nil];
+
+    [_editViewController setInputImage:image]
+    [self presentViewController:_editViewController animated:YES completion:nil];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

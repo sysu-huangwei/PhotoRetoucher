@@ -27,17 +27,14 @@
 
 @implementation EditViewController
 
-- (instancetype)initWithOriginImage:(UIImage *)originImage {
-    if (self = [super init]) {
-        _originImage = originImage;
-    }
-    return self;
+
+- (void)setInputImage:(UIImage *)originImage {
+    _originImage = originImage;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [_showView setInputImage:_originImage];
 //    UIImageView *imageView = [[UIImageView alloc] initWithFrame:_showView.bounds];
 //    imageView.contentMode = UIViewContentModeScaleAspectFit;
 //    [imageView setImage:_originImage];
@@ -56,6 +53,13 @@
 //    [_originPicture addTarget:_smallImageFilter];
     
 //    _originPicture.framebufferForOutput
+    
+    
+//    [_effectFilter setStickerImagePath:stickerPath];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     _effectAlpha = [NSMutableDictionary dictionaryWithDictionary: @{
         @(EffectType_Brightness) : @(0.0),
@@ -76,11 +80,8 @@
     _currintLutIndex = 0;
     
     NSString *stickerPath = [NSBundle.mainBundle.resourcePath stringByAppendingPathComponent:@"makeup/makeup.png"];
-//    [_effectFilter setStickerImagePath:stickerPath];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+    
+    [_showView setInputImage:_originImage];
     [_showView render];
 //    [_originPicture processImageUpToFilter:_effectFilter withCompletionHandler:^(UIImage *processedImage) {
 //        dispatch_async(dispatch_get_main_queue(), ^{
@@ -89,6 +90,10 @@
 //            }
 //        });
 //    }];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [_showView releaseGL];
 }
 
 - (IBAction)clickSomeEffectButton:(UIButton *)button {
@@ -181,6 +186,11 @@
     }else {
         [self.view makeToast:@"保存成功"];
     }
+}
+
+
+- (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

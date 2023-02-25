@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet UILabel *effectSliderLabel;
 @property (strong, nonatomic) UIButton *currentSelectedButton;
 
-- (instancetype)initWithOriginImage:(UIImage *)originImage;
+- (void)setInputImage:(UIImage *)originImage;
 
 @end
 

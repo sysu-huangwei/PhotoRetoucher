@@ -22,6 +22,8 @@ typedef NS_ENUM(NSUInteger, EffectType) {
 
 @interface GLView : UIView
 
+- (void)releaseGL;
+
 - (void)setInputImage:(UIImage *)image;
 
 - (void)render;
